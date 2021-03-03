@@ -10,14 +10,14 @@
         <version>9</version>
     </parent>
 
-    <groupId>xausky.github.io</groupId>
+    <groupId>io.github.esirotkin</groupId>
     <artifactId>rancher-java-client</artifactId>
     <version>1.6.26-SNAPSHOT</version>
 
     <scm>
-        <developerConnection>scm:git:ssh://git@github.com:xausky/rancher-java-client.git</developerConnection>
-        <connection>scm:git:ssh://git@github.com:xausky/rancher-java-client.git</connection>
-        <url>https://github.com/xausky/rancher-java-client</url>
+        <developerConnection>scm:git:ssh://git@github.com:esirotkin/rancher-java-client.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com:esirotkin/rancher-java-client.git</connection>
+        <url>https://github.com/esirotkin/rancher-java-client</url>
         <tag>HEAD</tag>
     </scm>
 
