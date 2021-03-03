@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface PublicEndpointService {
 
-  @GET("publicEndpoint")
-  Call<TypeCollection<PublicEndpoint>> list();
+    @GET("publicEndpoint")
+    Call<TypeCollection<PublicEndpoint>> list();
 
-  @GET("publicEndpoint")
-  Call<TypeCollection<PublicEndpoint>> list(@QueryMap Filters filters);
+    @GET("publicEndpoint")
+    Call<TypeCollection<PublicEndpoint>> list(@QueryMap Filters filters);
 
-  @GET("publicEndpoint/{id}")
-  Call<PublicEndpoint> get(@Path("id") String id);
+    @GET("publicEndpoint/{id}")
+    Call<PublicEndpoint> get(@Path("id") String id);
 
-  @POST("publicEndpoint")
-  Call<PublicEndpoint> create(@Body PublicEndpoint publicEndpoint);
+    @POST("publicEndpoint")
+    Call<PublicEndpoint> create(@Body PublicEndpoint publicEndpoint);
 
-  @PUT("publicEndpoint/{id}")
-  Call<PublicEndpoint> update(@Path("id") String id, @Body PublicEndpoint publicEndpoint);
+    @PUT("publicEndpoint/{id}")
+    Call<PublicEndpoint> update(@Path("id") String id, @Body PublicEndpoint publicEndpoint);
 
-  @DELETE("publicEndpoint/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("publicEndpoint/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

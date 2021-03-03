@@ -13,4 +13,5 @@ public class TypeCollection<T> {
     public void setData(List<T> data) {
         this.data = data;
     }
+
 }

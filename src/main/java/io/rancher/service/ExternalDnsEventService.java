@@ -17,25 +17,25 @@ import retrofit2.http.QueryMap;
 
 public interface ExternalDnsEventService {
 
-  @GET("externalDnsEvent")
-  Call<TypeCollection<ExternalDnsEvent>> list();
+    @GET("externalDnsEvent")
+    Call<TypeCollection<ExternalDnsEvent>> list();
 
-  @GET("externalDnsEvent")
-  Call<TypeCollection<ExternalDnsEvent>> list(@QueryMap Filters filters);
+    @GET("externalDnsEvent")
+    Call<TypeCollection<ExternalDnsEvent>> list(@QueryMap Filters filters);
 
-  @GET("externalDnsEvent/{id}")
-  Call<ExternalDnsEvent> get(@Path("id") String id);
+    @GET("externalDnsEvent/{id}")
+    Call<ExternalDnsEvent> get(@Path("id") String id);
 
-  @POST("externalDnsEvent")
-  Call<ExternalDnsEvent> create(@Body ExternalDnsEvent externalDnsEvent);
+    @POST("externalDnsEvent")
+    Call<ExternalDnsEvent> create(@Body ExternalDnsEvent externalDnsEvent);
 
-  @PUT("externalDnsEvent/{id}")
-  Call<ExternalDnsEvent> update(@Path("id") String id, @Body ExternalDnsEvent externalDnsEvent);
+    @PUT("externalDnsEvent/{id}")
+    Call<ExternalDnsEvent> update(@Path("id") String id, @Body ExternalDnsEvent externalDnsEvent);
 
-  @DELETE("externalDnsEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("externalDnsEvent/{id}?action=remove")
-  Call<ExternalEvent> remove(@Path("id") String id);
-  
+    @DELETE("externalDnsEvent/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("externalDnsEvent/{id}?action=remove")
+    Call<ExternalEvent> remove(@Path("id") String id);
+    
 }

@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface LogConfigService {
 
-  @GET("logConfig")
-  Call<TypeCollection<LogConfig>> list();
+    @GET("logConfig")
+    Call<TypeCollection<LogConfig>> list();
 
-  @GET("logConfig")
-  Call<TypeCollection<LogConfig>> list(@QueryMap Filters filters);
+    @GET("logConfig")
+    Call<TypeCollection<LogConfig>> list(@QueryMap Filters filters);
 
-  @GET("logConfig/{id}")
-  Call<LogConfig> get(@Path("id") String id);
+    @GET("logConfig/{id}")
+    Call<LogConfig> get(@Path("id") String id);
 
-  @POST("logConfig")
-  Call<LogConfig> create(@Body LogConfig logConfig);
+    @POST("logConfig")
+    Call<LogConfig> create(@Body LogConfig logConfig);
 
-  @PUT("logConfig/{id}")
-  Call<LogConfig> update(@Path("id") String id, @Body LogConfig logConfig);
+    @PUT("logConfig/{id}")
+    Call<LogConfig> update(@Path("id") String id, @Body LogConfig logConfig);
 
-  @DELETE("logConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("logConfig/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

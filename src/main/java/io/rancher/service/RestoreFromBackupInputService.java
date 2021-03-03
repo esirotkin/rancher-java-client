@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface RestoreFromBackupInputService {
 
-  @GET("restoreFromBackupInput")
-  Call<TypeCollection<RestoreFromBackupInput>> list();
+    @GET("restoreFromBackupInput")
+    Call<TypeCollection<RestoreFromBackupInput>> list();
 
-  @GET("restoreFromBackupInput")
-  Call<TypeCollection<RestoreFromBackupInput>> list(@QueryMap Filters filters);
+    @GET("restoreFromBackupInput")
+    Call<TypeCollection<RestoreFromBackupInput>> list(@QueryMap Filters filters);
 
-  @GET("restoreFromBackupInput/{id}")
-  Call<RestoreFromBackupInput> get(@Path("id") String id);
+    @GET("restoreFromBackupInput/{id}")
+    Call<RestoreFromBackupInput> get(@Path("id") String id);
 
-  @POST("restoreFromBackupInput")
-  Call<RestoreFromBackupInput> create(@Body RestoreFromBackupInput restoreFromBackupInput);
+    @POST("restoreFromBackupInput")
+    Call<RestoreFromBackupInput> create(@Body RestoreFromBackupInput restoreFromBackupInput);
 
-  @PUT("restoreFromBackupInput/{id}")
-  Call<RestoreFromBackupInput> update(@Path("id") String id, @Body RestoreFromBackupInput restoreFromBackupInput);
+    @PUT("restoreFromBackupInput/{id}")
+    Call<RestoreFromBackupInput> update(@Path("id") String id, @Body RestoreFromBackupInput restoreFromBackupInput);
 
-  @DELETE("restoreFromBackupInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("restoreFromBackupInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

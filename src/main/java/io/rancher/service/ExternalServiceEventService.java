@@ -17,25 +17,25 @@ import retrofit2.http.QueryMap;
 
 public interface ExternalServiceEventService {
 
-  @GET("externalServiceEvent")
-  Call<TypeCollection<ExternalServiceEvent>> list();
+    @GET("externalServiceEvent")
+    Call<TypeCollection<ExternalServiceEvent>> list();
 
-  @GET("externalServiceEvent")
-  Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap Filters filters);
+    @GET("externalServiceEvent")
+    Call<TypeCollection<ExternalServiceEvent>> list(@QueryMap Filters filters);
 
-  @GET("externalServiceEvent/{id}")
-  Call<ExternalServiceEvent> get(@Path("id") String id);
+    @GET("externalServiceEvent/{id}")
+    Call<ExternalServiceEvent> get(@Path("id") String id);
 
-  @POST("externalServiceEvent")
-  Call<ExternalServiceEvent> create(@Body ExternalServiceEvent externalServiceEvent);
+    @POST("externalServiceEvent")
+    Call<ExternalServiceEvent> create(@Body ExternalServiceEvent externalServiceEvent);
 
-  @PUT("externalServiceEvent/{id}")
-  Call<ExternalServiceEvent> update(@Path("id") String id, @Body ExternalServiceEvent externalServiceEvent);
+    @PUT("externalServiceEvent/{id}")
+    Call<ExternalServiceEvent> update(@Path("id") String id, @Body ExternalServiceEvent externalServiceEvent);
 
-  @DELETE("externalServiceEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("externalServiceEvent/{id}?action=remove")
-  Call<ExternalEvent> remove(@Path("id") String id);
-  
+    @DELETE("externalServiceEvent/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("externalServiceEvent/{id}?action=remove")
+    Call<ExternalEvent> remove(@Path("id") String id);
+    
 }

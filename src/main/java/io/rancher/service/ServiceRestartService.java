@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ServiceRestartService {
 
-  @GET("serviceRestart")
-  Call<TypeCollection<ServiceRestart>> list();
+    @GET("serviceRestart")
+    Call<TypeCollection<ServiceRestart>> list();
 
-  @GET("serviceRestart")
-  Call<TypeCollection<ServiceRestart>> list(@QueryMap Filters filters);
+    @GET("serviceRestart")
+    Call<TypeCollection<ServiceRestart>> list(@QueryMap Filters filters);
 
-  @GET("serviceRestart/{id}")
-  Call<ServiceRestart> get(@Path("id") String id);
+    @GET("serviceRestart/{id}")
+    Call<ServiceRestart> get(@Path("id") String id);
 
-  @POST("serviceRestart")
-  Call<ServiceRestart> create(@Body ServiceRestart serviceRestart);
+    @POST("serviceRestart")
+    Call<ServiceRestart> create(@Body ServiceRestart serviceRestart);
 
-  @PUT("serviceRestart/{id}")
-  Call<ServiceRestart> update(@Path("id") String id, @Body ServiceRestart serviceRestart);
+    @PUT("serviceRestart/{id}")
+    Call<ServiceRestart> update(@Path("id") String id, @Body ServiceRestart serviceRestart);
 
-  @DELETE("serviceRestart/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("serviceRestart/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

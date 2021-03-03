@@ -17,25 +17,25 @@ import retrofit2.http.QueryMap;
 
 public interface ExternalStoragePoolEventService {
 
-  @GET("externalStoragePoolEvent")
-  Call<TypeCollection<ExternalStoragePoolEvent>> list();
+    @GET("externalStoragePoolEvent")
+    Call<TypeCollection<ExternalStoragePoolEvent>> list();
 
-  @GET("externalStoragePoolEvent")
-  Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap Filters filters);
+    @GET("externalStoragePoolEvent")
+    Call<TypeCollection<ExternalStoragePoolEvent>> list(@QueryMap Filters filters);
 
-  @GET("externalStoragePoolEvent/{id}")
-  Call<ExternalStoragePoolEvent> get(@Path("id") String id);
+    @GET("externalStoragePoolEvent/{id}")
+    Call<ExternalStoragePoolEvent> get(@Path("id") String id);
 
-  @POST("externalStoragePoolEvent")
-  Call<ExternalStoragePoolEvent> create(@Body ExternalStoragePoolEvent externalStoragePoolEvent);
+    @POST("externalStoragePoolEvent")
+    Call<ExternalStoragePoolEvent> create(@Body ExternalStoragePoolEvent externalStoragePoolEvent);
 
-  @PUT("externalStoragePoolEvent/{id}")
-  Call<ExternalStoragePoolEvent> update(@Path("id") String id, @Body ExternalStoragePoolEvent externalStoragePoolEvent);
+    @PUT("externalStoragePoolEvent/{id}")
+    Call<ExternalStoragePoolEvent> update(@Path("id") String id, @Body ExternalStoragePoolEvent externalStoragePoolEvent);
 
-  @DELETE("externalStoragePoolEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("externalStoragePoolEvent/{id}?action=remove")
-  Call<ExternalEvent> remove(@Path("id") String id);
-  
+    @DELETE("externalStoragePoolEvent/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("externalStoragePoolEvent/{id}?action=remove")
+    Call<ExternalEvent> remove(@Path("id") String id);
+    
 }

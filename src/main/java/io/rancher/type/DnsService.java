@@ -1,6 +1,7 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 import java.util.Map;
 
 public class DnsService extends AbstractType {
@@ -11,11 +12,7 @@ public class DnsService extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
-    
-    private String environmentId;
     
     private String externalId;
     
@@ -23,15 +20,17 @@ public class DnsService extends AbstractType {
     
     private String healthState;
     
+    private List<String> instanceIds;
+    
     private String kind;
     
     private LaunchConfig launchConfig;
     
+    private Map<String, Object> linkedServices;
+    
     private Map<String, Object> metadata;
     
     private String name;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -39,9 +38,13 @@ public class DnsService extends AbstractType {
     
     private String selectorLink;
     
+    private String stackId;
+    
     private Boolean startOnCreate;
     
     private String state;
+    
+    private Boolean system;
     
     private String transitioning;
     
@@ -77,28 +80,12 @@ public class DnsService extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getEnvironmentId() {
-        return this.environmentId;
-    }
-
-    public void setEnvironmentId(String environmentId) {
-      this.environmentId = environmentId;
     }
     
     public String getExternalId() {
@@ -125,6 +112,14 @@ public class DnsService extends AbstractType {
       this.healthState = healthState;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -141,6 +136,14 @@ public class DnsService extends AbstractType {
       this.launchConfig = launchConfig;
     }
     
+    public Map<String, Object> getLinkedServices() {
+        return this.linkedServices;
+    }
+
+    public void setLinkedServices(Map<String, Object> linkedServices) {
+      this.linkedServices = linkedServices;
+    }
+    
     public Map<String, Object> getMetadata() {
         return this.metadata;
     }
@@ -155,14 +158,6 @@ public class DnsService extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {
@@ -189,6 +184,14 @@ public class DnsService extends AbstractType {
       this.selectorLink = selectorLink;
     }
     
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public Boolean getStartOnCreate() {
         return this.startOnCreate;
     }
@@ -203,6 +206,14 @@ public class DnsService extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public Boolean getSystem() {
+        return this.system;
+    }
+
+    public void setSystem(Boolean system) {
+      this.system = system;
     }
     
     public String getTransitioning() {

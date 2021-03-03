@@ -1,18 +1,17 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
 
 public class ServiceConsumeMap extends AbstractType {
     
     private String accountId;
     
+    private String consumedService;
+    
     private String consumedServiceId;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String description;
     
@@ -21,8 +20,6 @@ public class ServiceConsumeMap extends AbstractType {
     private String name;
     
     private List<String> ports;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -46,6 +43,14 @@ public class ServiceConsumeMap extends AbstractType {
       this.accountId = accountId;
     }
     
+    public String getConsumedService() {
+        return this.consumedService;
+    }
+
+    public void setConsumedService(String consumedService) {
+      this.consumedService = consumedService;
+    }
+    
     public String getConsumedServiceId() {
         return this.consumedServiceId;
     }
@@ -60,14 +65,6 @@ public class ServiceConsumeMap extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -100,14 +97,6 @@ public class ServiceConsumeMap extends AbstractType {
 
     public void setPorts(List<String> ports) {
       this.ports = ports;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

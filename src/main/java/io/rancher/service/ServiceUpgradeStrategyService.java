@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ServiceUpgradeStrategyService {
 
-  @GET("serviceUpgradeStrategy")
-  Call<TypeCollection<ServiceUpgradeStrategy>> list();
+    @GET("serviceUpgradeStrategy")
+    Call<TypeCollection<ServiceUpgradeStrategy>> list();
 
-  @GET("serviceUpgradeStrategy")
-  Call<TypeCollection<ServiceUpgradeStrategy>> list(@QueryMap Filters filters);
+    @GET("serviceUpgradeStrategy")
+    Call<TypeCollection<ServiceUpgradeStrategy>> list(@QueryMap Filters filters);
 
-  @GET("serviceUpgradeStrategy/{id}")
-  Call<ServiceUpgradeStrategy> get(@Path("id") String id);
+    @GET("serviceUpgradeStrategy/{id}")
+    Call<ServiceUpgradeStrategy> get(@Path("id") String id);
 
-  @POST("serviceUpgradeStrategy")
-  Call<ServiceUpgradeStrategy> create(@Body ServiceUpgradeStrategy serviceUpgradeStrategy);
+    @POST("serviceUpgradeStrategy")
+    Call<ServiceUpgradeStrategy> create(@Body ServiceUpgradeStrategy serviceUpgradeStrategy);
 
-  @PUT("serviceUpgradeStrategy/{id}")
-  Call<ServiceUpgradeStrategy> update(@Path("id") String id, @Body ServiceUpgradeStrategy serviceUpgradeStrategy);
+    @PUT("serviceUpgradeStrategy/{id}")
+    Call<ServiceUpgradeStrategy> update(@Path("id") String id, @Body ServiceUpgradeStrategy serviceUpgradeStrategy);
 
-  @DELETE("serviceUpgradeStrategy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("serviceUpgradeStrategy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

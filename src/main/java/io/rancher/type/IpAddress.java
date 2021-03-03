@@ -1,7 +1,6 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class IpAddress extends AbstractType {
     
@@ -11,8 +10,6 @@ public class IpAddress extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
     
     private String kind;
@@ -20,8 +17,6 @@ public class IpAddress extends AbstractType {
     private String name;
     
     private String networkId;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -59,14 +54,6 @@ public class IpAddress extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
@@ -97,14 +84,6 @@ public class IpAddress extends AbstractType {
 
     public void setNetworkId(String networkId) {
       this.networkId = networkId;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

@@ -2,7 +2,6 @@ package io.rancher.type;
 
 import io.rancher.base.AbstractType;
 import java.util.List;
-import java.util.Map;
 
 public class Certificate extends AbstractType {
     
@@ -20,8 +19,6 @@ public class Certificate extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
     
     private String expiresAt;
@@ -37,8 +34,6 @@ public class Certificate extends AbstractType {
     private String kind;
     
     private String name;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -114,14 +109,6 @@ public class Certificate extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
@@ -184,14 +171,6 @@ public class Certificate extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

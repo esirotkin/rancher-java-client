@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ServiceProxyService {
 
-  @GET("serviceProxy")
-  Call<TypeCollection<ServiceProxy>> list();
+    @GET("serviceProxy")
+    Call<TypeCollection<ServiceProxy>> list();
 
-  @GET("serviceProxy")
-  Call<TypeCollection<ServiceProxy>> list(@QueryMap Filters filters);
+    @GET("serviceProxy")
+    Call<TypeCollection<ServiceProxy>> list(@QueryMap Filters filters);
 
-  @GET("serviceProxy/{id}")
-  Call<ServiceProxy> get(@Path("id") String id);
+    @GET("serviceProxy/{id}")
+    Call<ServiceProxy> get(@Path("id") String id);
 
-  @POST("serviceProxy")
-  Call<ServiceProxy> create(@Body ServiceProxy serviceProxy);
+    @POST("serviceProxy")
+    Call<ServiceProxy> create(@Body ServiceProxy serviceProxy);
 
-  @PUT("serviceProxy/{id}")
-  Call<ServiceProxy> update(@Path("id") String id, @Body ServiceProxy serviceProxy);
+    @PUT("serviceProxy/{id}")
+    Call<ServiceProxy> update(@Path("id") String id, @Body ServiceProxy serviceProxy);
 
-  @DELETE("serviceProxy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("serviceProxy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

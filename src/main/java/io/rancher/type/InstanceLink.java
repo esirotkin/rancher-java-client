@@ -1,16 +1,12 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.List;
-import java.util.Map;
 
 public class InstanceLink extends AbstractType {
     
     private String accountId;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String description;
     
@@ -21,10 +17,6 @@ public class InstanceLink extends AbstractType {
     private String linkName;
     
     private String name;
-    
-    private List<Map<String, Object>> ports;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -54,14 +46,6 @@ public class InstanceLink extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -102,22 +86,6 @@ public class InstanceLink extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public List<Map<String, Object>> getPorts() {
-        return this.ports;
-    }
-
-    public void setPorts(List<Map<String, Object>> ports) {
-      this.ports = ports;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

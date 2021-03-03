@@ -16,37 +16,34 @@ import retrofit2.http.QueryMap;
 
 public interface PortService {
 
-  @GET("port")
-  Call<TypeCollection<Port>> list();
+    @GET("port")
+    Call<TypeCollection<Port>> list();
 
-  @GET("port")
-  Call<TypeCollection<Port>> list(@QueryMap Filters filters);
+    @GET("port")
+    Call<TypeCollection<Port>> list(@QueryMap Filters filters);
 
-  @GET("port/{id}")
-  Call<Port> get(@Path("id") String id);
+    @GET("port/{id}")
+    Call<Port> get(@Path("id") String id);
 
-  @POST("port")
-  Call<Port> create(@Body Port port);
+    @POST("port")
+    Call<Port> create(@Body Port port);
 
-  @PUT("port/{id}")
-  Call<Port> update(@Path("id") String id, @Body Port port);
+    @PUT("port/{id}")
+    Call<Port> update(@Path("id") String id, @Body Port port);
 
-  @DELETE("port/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("port/{id}?action=activate")
-  Call<Port> activate(@Path("id") String id);
-  
-  @POST("port/{id}?action=deactivate")
-  Call<Port> deactivate(@Path("id") String id);
-  
-  @POST("port/{id}?action=purge")
-  Call<Port> purge(@Path("id") String id);
-  
-  @POST("port/{id}?action=remove")
-  Call<Port> remove(@Path("id") String id);
-  
-  @POST("port/{id}?action=restore")
-  Call<Port> restore(@Path("id") String id);
-  
+    @DELETE("port/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("port/{id}?action=activate")
+    Call<Port> activate(@Path("id") String id);
+    
+    @POST("port/{id}?action=deactivate")
+    Call<Port> deactivate(@Path("id") String id);
+    
+    @POST("port/{id}?action=purge")
+    Call<Port> purge(@Path("id") String id);
+    
+    @POST("port/{id}?action=remove")
+    Call<Port> remove(@Path("id") String id);
+    
 }

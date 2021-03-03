@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface RecreateOnQuorumStrategyConfigService {
 
-  @GET("recreateOnQuorumStrategyConfig")
-  Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list();
+    @GET("recreateOnQuorumStrategyConfig")
+    Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list();
 
-  @GET("recreateOnQuorumStrategyConfig")
-  Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list(@QueryMap Filters filters);
+    @GET("recreateOnQuorumStrategyConfig")
+    Call<TypeCollection<RecreateOnQuorumStrategyConfig>> list(@QueryMap Filters filters);
 
-  @GET("recreateOnQuorumStrategyConfig/{id}")
-  Call<RecreateOnQuorumStrategyConfig> get(@Path("id") String id);
+    @GET("recreateOnQuorumStrategyConfig/{id}")
+    Call<RecreateOnQuorumStrategyConfig> get(@Path("id") String id);
 
-  @POST("recreateOnQuorumStrategyConfig")
-  Call<RecreateOnQuorumStrategyConfig> create(@Body RecreateOnQuorumStrategyConfig recreateOnQuorumStrategyConfig);
+    @POST("recreateOnQuorumStrategyConfig")
+    Call<RecreateOnQuorumStrategyConfig> create(@Body RecreateOnQuorumStrategyConfig recreateOnQuorumStrategyConfig);
 
-  @PUT("recreateOnQuorumStrategyConfig/{id}")
-  Call<RecreateOnQuorumStrategyConfig> update(@Path("id") String id, @Body RecreateOnQuorumStrategyConfig recreateOnQuorumStrategyConfig);
+    @PUT("recreateOnQuorumStrategyConfig/{id}")
+    Call<RecreateOnQuorumStrategyConfig> update(@Path("id") String id, @Body RecreateOnQuorumStrategyConfig recreateOnQuorumStrategyConfig);
 
-  @DELETE("recreateOnQuorumStrategyConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("recreateOnQuorumStrategyConfig/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

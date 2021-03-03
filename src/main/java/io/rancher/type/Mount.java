@@ -1,15 +1,12 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class Mount extends AbstractType {
     
     private String accountId;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String description;
     
@@ -22,8 +19,6 @@ public class Mount extends AbstractType {
     private String path;
     
     private String permissions;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -53,14 +48,6 @@ public class Mount extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -109,14 +96,6 @@ public class Mount extends AbstractType {
 
     public void setPermissions(String permissions) {
       this.permissions = permissions;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

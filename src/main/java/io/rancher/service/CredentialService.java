@@ -16,34 +16,34 @@ import retrofit2.http.QueryMap;
 
 public interface CredentialService {
 
-  @GET("credential")
-  Call<TypeCollection<Credential>> list();
+    @GET("credential")
+    Call<TypeCollection<Credential>> list();
 
-  @GET("credential")
-  Call<TypeCollection<Credential>> list(@QueryMap Filters filters);
+    @GET("credential")
+    Call<TypeCollection<Credential>> list(@QueryMap Filters filters);
 
-  @GET("credential/{id}")
-  Call<Credential> get(@Path("id") String id);
+    @GET("credential/{id}")
+    Call<Credential> get(@Path("id") String id);
 
-  @POST("credential")
-  Call<Credential> create(@Body Credential credential);
+    @POST("credential")
+    Call<Credential> create(@Body Credential credential);
 
-  @PUT("credential/{id}")
-  Call<Credential> update(@Path("id") String id, @Body Credential credential);
+    @PUT("credential/{id}")
+    Call<Credential> update(@Path("id") String id, @Body Credential credential);
 
-  @DELETE("credential/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("credential/{id}?action=activate")
-  Call<Credential> activate(@Path("id") String id);
-  
-  @POST("credential/{id}?action=deactivate")
-  Call<Credential> deactivate(@Path("id") String id);
-  
-  @POST("credential/{id}?action=purge")
-  Call<Credential> purge(@Path("id") String id);
-  
-  @POST("credential/{id}?action=remove")
-  Call<Credential> remove(@Path("id") String id);
-  
+    @DELETE("credential/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("credential/{id}?action=activate")
+    Call<Credential> activate(@Path("id") String id);
+    
+    @POST("credential/{id}?action=deactivate")
+    Call<Credential> deactivate(@Path("id") String id);
+    
+    @POST("credential/{id}?action=purge")
+    Call<Credential> purge(@Path("id") String id);
+    
+    @POST("credential/{id}?action=remove")
+    Call<Credential> remove(@Path("id") String id);
+    
 }

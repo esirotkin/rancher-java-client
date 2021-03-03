@@ -1,7 +1,6 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class RegistrationToken extends AbstractType {
     
@@ -10,8 +9,6 @@ public class RegistrationToken extends AbstractType {
     private String command;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String description;
     
@@ -22,8 +19,6 @@ public class RegistrationToken extends AbstractType {
     private String name;
     
     private String registrationUrl;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -61,14 +56,6 @@ public class RegistrationToken extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -109,14 +96,6 @@ public class RegistrationToken extends AbstractType {
 
     public void setRegistrationUrl(String registrationUrl) {
       this.registrationUrl = registrationUrl;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

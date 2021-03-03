@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ScalePolicyService {
 
-  @GET("scalePolicy")
-  Call<TypeCollection<ScalePolicy>> list();
+    @GET("scalePolicy")
+    Call<TypeCollection<ScalePolicy>> list();
 
-  @GET("scalePolicy")
-  Call<TypeCollection<ScalePolicy>> list(@QueryMap Filters filters);
+    @GET("scalePolicy")
+    Call<TypeCollection<ScalePolicy>> list(@QueryMap Filters filters);
 
-  @GET("scalePolicy/{id}")
-  Call<ScalePolicy> get(@Path("id") String id);
+    @GET("scalePolicy/{id}")
+    Call<ScalePolicy> get(@Path("id") String id);
 
-  @POST("scalePolicy")
-  Call<ScalePolicy> create(@Body ScalePolicy scalePolicy);
+    @POST("scalePolicy")
+    Call<ScalePolicy> create(@Body ScalePolicy scalePolicy);
 
-  @PUT("scalePolicy/{id}")
-  Call<ScalePolicy> update(@Path("id") String id, @Body ScalePolicy scalePolicy);
+    @PUT("scalePolicy/{id}")
+    Call<ScalePolicy> update(@Path("id") String id, @Body ScalePolicy scalePolicy);
 
-  @DELETE("scalePolicy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("scalePolicy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

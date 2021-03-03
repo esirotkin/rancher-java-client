@@ -6,6 +6,8 @@ public class ServiceLink extends AbstractType {
     
     private String name;
     
+    private String service;
+    
     private String serviceId;
     
     private String uuid;
@@ -16,6 +18,14 @@ public class ServiceLink extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
+    }
+    
+    public String getService() {
+        return this.service;
+    }
+
+    public void setService(String service) {
+      this.service = service;
     }
     
     public String getServiceId() {

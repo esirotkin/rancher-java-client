@@ -11,4 +11,5 @@ public abstract class AbstractType {
     public void setId(String id) {
         this.id = id;
     }
+
 }

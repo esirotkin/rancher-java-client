@@ -21,11 +21,12 @@ var TYPE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "type")
 var SERVICE_SOURCE_OUTPUT_DIR = path.Join(SOURCE_OUTPUT_DIR, "service")
 
 var (
-	blackListTypes    map[string]bool
-	blackListActions  map[string]bool
-	noConversionTypes map[string]bool
-	underscoreRegexp  *regexp.Regexp = regexp.MustCompile(`([a-z])([A-Z])`)
-	schemaExists      map[string]bool
+	blackListTypes        map[string]bool
+	blackListActions      map[string]bool
+	blackListIncludeables map[string]bool
+	noConversionTypes     map[string]bool
+	underscoreRegexp      *regexp.Regexp = regexp.MustCompile(`([a-z])([A-Z])`)
+	schemaExists          map[string]bool
 )
 
 type metadata struct {
@@ -71,6 +72,9 @@ func init() {
 	blackListActions["create"] = true
 	blackListActions["update"] = true
 
+	blackListIncludeables = make(map[string]bool)
+	blackListIncludeables["clusters"] = true
+
 	noConversionTypes = make(map[string]bool)
 	noConversionTypes["string"] = true
 
@@ -90,6 +94,7 @@ func getTypeMap(schema client.Schema) (map[string]string, metadata) {
 		importTypes:       map[string]bool{},
 		actionImportTypes: map[string]bool{},
 	}
+
 	result := map[string]string{}
 	for name, field := range schema.ResourceFields {
 		if name == "id" {
@@ -172,8 +177,138 @@ func generateType(schema client.Schema) error {
 	return generateTemplate(schema, path.Join(TYPE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+".java"), "type.template")
 }
 
-func generateService(schema client.Schema) error {
+func generateService(schema client.Schema, schemas client.Schemas) error {
+	for _, includeableLink := range schema.IncludeableLinks {
+		if _, ok := blackListIncludeables[includeableLink]; ok {
+			continue
+		}
+
+		classNamePrefix := capitalize(schema.Id) + capitalizeClassSuffix(includeableLink)
+		err := generateTemplateIncludeable(getIncludeableSchema(schemas, includeableLink), getPrefix(schema), classNamePrefix, path.Join(SERVICE_SOURCE_OUTPUT_DIR, classNamePrefix+"Service.java"), "includeable.template")
+		if err != nil {
+			return err
+		}
+	}
 	return generateTemplate(schema, path.Join(SERVICE_SOURCE_OUTPUT_DIR, capitalize(schema.Id)+"Service.java"), "service.template")
+}
+
+func capitalizeClassSuffix(includeableLink string) string {
+	var capitalizedClassSuffix string
+	switch includeableLink {
+	case "consumedservices":
+		capitalizedClassSuffix = "ConsumedServices"
+	case "consumedbyservices":
+		capitalizedClassSuffix = "ConsumedByServices"
+	default:
+		capitalizedClassSuffix = capitalize(includeableLink)
+	}
+	return capitalizedClassSuffix
+}
+
+func getIncludeableSchema(schemas client.Schemas, includeableLink string) client.Schema {
+	var result client.Schema
+	var schemaId string
+
+	switch includeableLink {
+	case "networkContainer":
+		schemaId = "network"
+	case "consumedService":
+		schemaId = "service"
+	case "consumedservices":
+		schemaId = "service"
+	case "consumedbyservices":
+		schemaId = "service"
+	case "targetInstance":
+		schemaId = "instance"
+	case "targetInstanceLinks":
+		schemaId = "instanceLink"
+	case "hostLabels":
+		schemaId = "label"
+	case "instanceLabels":
+		schemaId = "label"
+	case "authenticatedAsAccount":
+		schemaId = "account"
+	case "reportedAccount":
+		schemaId = "account"
+	case "privateIpAddress":
+		schemaId = "ipAddress"
+	case "publicIpAddress":
+		schemaId = "ipAddress"
+	case "privatePorts":
+		schemaId = "port"
+	case "publicPorts":
+		schemaId = "port"
+	default:
+		if includeableLink[len(includeableLink)-3:] == "ses" {
+			schemaId = includeableLink[:len(includeableLink)-2]
+		} else if includeableLink[len(includeableLink)-1:] == "s" {
+			schemaId = includeableLink[:len(includeableLink)-1]
+		} else {
+			schemaId = includeableLink
+		}
+	}
+
+	for _, schema := range schemas.Data {
+		if schema.Id == schemaId {
+			result = schema
+			return result
+		}
+	}
+
+	return result
+}
+
+func getPrefix(schema client.Schema) string {
+	var prefix string
+	schemaId := schema.Id
+	if schemaId[len(schemaId)-1:] == "s" {
+		prefix = schemaId + "es"
+	} else {
+		prefix = schemaId + "s"
+	}
+	return prefix
+}
+
+func generateTemplateIncludeable(schema client.Schema, prefix string, classNamePrefix string, outputPath string, templateName string) error {
+	err := setupDirectory(path.Dir(outputPath))
+	if err != nil {
+		return err
+	}
+
+	output, err := os.Create(outputPath)
+
+	if err != nil {
+		return err
+	}
+
+	defer output.Close()
+
+	typeMap, metadata := getTypeMap(schema)
+	data := map[string]interface{}{
+		"schema":          schema,
+		"classNamePrefix": classNamePrefix,
+		"class":           capitalize(schema.Id),
+		"collection":      capitalize(schema.Id) + "Collection",
+		"structFields":    typeMap,
+		"resourceActions": getResourceActions(schema, metadata),
+		"type":            schema.Id,
+		"meta":            metadata,
+		"prefix":          prefix,
+	}
+
+	funcMap := template.FuncMap{
+		"toCamelCase":       ToLowerCamelCase,
+		"toLowerUnderscore": addUnderscore,
+		"capitalize":        capitalize,
+		"upper":             strings.ToUpper,
+	}
+
+	typeTemplate, err := template.New(templateName).Funcs(funcMap).ParseFiles(templateName)
+	if err != nil {
+		return err
+	}
+
+	return typeTemplate.Execute(output, data)
 }
 
 func generateTemplate(schema client.Schema, outputPath string, templateName string) error {
@@ -262,7 +397,7 @@ func generateFiles() error {
 		if err != nil {
 			return err
 		}
-		err = generateService(schema)
+		err = generateService(schema, schemas)
 		if err != nil {
 			return err
 		}

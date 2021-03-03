@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface SetProjectMembersInputService {
 
-  @GET("setProjectMembersInput")
-  Call<TypeCollection<SetProjectMembersInput>> list();
+    @GET("setProjectMembersInput")
+    Call<TypeCollection<SetProjectMembersInput>> list();
 
-  @GET("setProjectMembersInput")
-  Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap Filters filters);
+    @GET("setProjectMembersInput")
+    Call<TypeCollection<SetProjectMembersInput>> list(@QueryMap Filters filters);
 
-  @GET("setProjectMembersInput/{id}")
-  Call<SetProjectMembersInput> get(@Path("id") String id);
+    @GET("setProjectMembersInput/{id}")
+    Call<SetProjectMembersInput> get(@Path("id") String id);
 
-  @POST("setProjectMembersInput")
-  Call<SetProjectMembersInput> create(@Body SetProjectMembersInput setProjectMembersInput);
+    @POST("setProjectMembersInput")
+    Call<SetProjectMembersInput> create(@Body SetProjectMembersInput setProjectMembersInput);
 
-  @PUT("setProjectMembersInput/{id}")
-  Call<SetProjectMembersInput> update(@Path("id") String id, @Body SetProjectMembersInput setProjectMembersInput);
+    @PUT("setProjectMembersInput/{id}")
+    Call<SetProjectMembersInput> update(@Path("id") String id, @Body SetProjectMembersInput setProjectMembersInput);
 
-  @DELETE("setProjectMembersInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("setProjectMembersInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

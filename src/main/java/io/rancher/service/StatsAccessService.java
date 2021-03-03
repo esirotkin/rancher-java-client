@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface StatsAccessService {
 
-  @GET("statsAccess")
-  Call<TypeCollection<StatsAccess>> list();
+    @GET("statsAccess")
+    Call<TypeCollection<StatsAccess>> list();
 
-  @GET("statsAccess")
-  Call<TypeCollection<StatsAccess>> list(@QueryMap Filters filters);
+    @GET("statsAccess")
+    Call<TypeCollection<StatsAccess>> list(@QueryMap Filters filters);
 
-  @GET("statsAccess/{id}")
-  Call<StatsAccess> get(@Path("id") String id);
+    @GET("statsAccess/{id}")
+    Call<StatsAccess> get(@Path("id") String id);
 
-  @POST("statsAccess")
-  Call<StatsAccess> create(@Body StatsAccess statsAccess);
+    @POST("statsAccess")
+    Call<StatsAccess> create(@Body StatsAccess statsAccess);
 
-  @PUT("statsAccess/{id}")
-  Call<StatsAccess> update(@Path("id") String id, @Body StatsAccess statsAccess);
+    @PUT("statsAccess/{id}")
+    Call<StatsAccess> update(@Path("id") String id, @Body StatsAccess statsAccess);
 
-  @DELETE("statsAccess/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("statsAccess/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

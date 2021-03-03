@@ -16,25 +16,25 @@ import retrofit2.http.QueryMap;
 
 public interface ServiceEventService {
 
-  @GET("serviceEvent")
-  Call<TypeCollection<ServiceEvent>> list();
+    @GET("serviceEvent")
+    Call<TypeCollection<ServiceEvent>> list();
 
-  @GET("serviceEvent")
-  Call<TypeCollection<ServiceEvent>> list(@QueryMap Filters filters);
+    @GET("serviceEvent")
+    Call<TypeCollection<ServiceEvent>> list(@QueryMap Filters filters);
 
-  @GET("serviceEvent/{id}")
-  Call<ServiceEvent> get(@Path("id") String id);
+    @GET("serviceEvent/{id}")
+    Call<ServiceEvent> get(@Path("id") String id);
 
-  @POST("serviceEvent")
-  Call<ServiceEvent> create(@Body ServiceEvent serviceEvent);
+    @POST("serviceEvent")
+    Call<ServiceEvent> create(@Body ServiceEvent serviceEvent);
 
-  @PUT("serviceEvent/{id}")
-  Call<ServiceEvent> update(@Path("id") String id, @Body ServiceEvent serviceEvent);
+    @PUT("serviceEvent/{id}")
+    Call<ServiceEvent> update(@Path("id") String id, @Body ServiceEvent serviceEvent);
 
-  @DELETE("serviceEvent/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("serviceEvent/{id}?action=remove")
-  Call<ServiceEvent> remove(@Path("id") String id);
-  
+    @DELETE("serviceEvent/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("serviceEvent/{id}?action=remove")
+    Call<ServiceEvent> remove(@Path("id") String id);
+    
 }

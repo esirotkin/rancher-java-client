@@ -11,8 +11,6 @@ public class Register extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
     
     private String key;
@@ -21,9 +19,9 @@ public class Register extends AbstractType {
     
     private String name;
     
-    private String removeTime;
-    
     private String removed;
+    
+    private Map<String, Object> resourceData;
     
     private String secretKey;
     
@@ -61,14 +59,6 @@ public class Register extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
@@ -101,20 +91,20 @@ public class Register extends AbstractType {
       this.name = name;
     }
     
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
-    }
-    
     public String getRemoved() {
         return this.removed;
     }
 
     public void setRemoved(String removed) {
       this.removed = removed;
+    }
+    
+    public Map<String, Object> getResourceData() {
+        return this.resourceData;
+    }
+
+    public void setResourceData(Map<String, Object> resourceData) {
+      this.resourceData = resourceData;
     }
     
     public String getSecretKey() {

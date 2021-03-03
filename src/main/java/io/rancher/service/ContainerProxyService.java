@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ContainerProxyService {
 
-  @GET("containerProxy")
-  Call<TypeCollection<ContainerProxy>> list();
+    @GET("containerProxy")
+    Call<TypeCollection<ContainerProxy>> list();
 
-  @GET("containerProxy")
-  Call<TypeCollection<ContainerProxy>> list(@QueryMap Filters filters);
+    @GET("containerProxy")
+    Call<TypeCollection<ContainerProxy>> list(@QueryMap Filters filters);
 
-  @GET("containerProxy/{id}")
-  Call<ContainerProxy> get(@Path("id") String id);
+    @GET("containerProxy/{id}")
+    Call<ContainerProxy> get(@Path("id") String id);
 
-  @POST("containerProxy")
-  Call<ContainerProxy> create(@Body ContainerProxy containerProxy);
+    @POST("containerProxy")
+    Call<ContainerProxy> create(@Body ContainerProxy containerProxy);
 
-  @PUT("containerProxy/{id}")
-  Call<ContainerProxy> update(@Path("id") String id, @Body ContainerProxy containerProxy);
+    @PUT("containerProxy/{id}")
+    Call<ContainerProxy> update(@Path("id") String id, @Body ContainerProxy containerProxy);
 
-  @DELETE("containerProxy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("containerProxy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

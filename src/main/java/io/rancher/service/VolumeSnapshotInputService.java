@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface VolumeSnapshotInputService {
 
-  @GET("volumeSnapshotInput")
-  Call<TypeCollection<VolumeSnapshotInput>> list();
+    @GET("volumeSnapshotInput")
+    Call<TypeCollection<VolumeSnapshotInput>> list();
 
-  @GET("volumeSnapshotInput")
-  Call<TypeCollection<VolumeSnapshotInput>> list(@QueryMap Filters filters);
+    @GET("volumeSnapshotInput")
+    Call<TypeCollection<VolumeSnapshotInput>> list(@QueryMap Filters filters);
 
-  @GET("volumeSnapshotInput/{id}")
-  Call<VolumeSnapshotInput> get(@Path("id") String id);
+    @GET("volumeSnapshotInput/{id}")
+    Call<VolumeSnapshotInput> get(@Path("id") String id);
 
-  @POST("volumeSnapshotInput")
-  Call<VolumeSnapshotInput> create(@Body VolumeSnapshotInput volumeSnapshotInput);
+    @POST("volumeSnapshotInput")
+    Call<VolumeSnapshotInput> create(@Body VolumeSnapshotInput volumeSnapshotInput);
 
-  @PUT("volumeSnapshotInput/{id}")
-  Call<VolumeSnapshotInput> update(@Path("id") String id, @Body VolumeSnapshotInput volumeSnapshotInput);
+    @PUT("volumeSnapshotInput/{id}")
+    Call<VolumeSnapshotInput> update(@Path("id") String id, @Body VolumeSnapshotInput volumeSnapshotInput);
 
-  @DELETE("volumeSnapshotInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("volumeSnapshotInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

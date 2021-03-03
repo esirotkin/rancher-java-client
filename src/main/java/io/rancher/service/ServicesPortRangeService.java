@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ServicesPortRangeService {
 
-  @GET("servicesPortRange")
-  Call<TypeCollection<ServicesPortRange>> list();
+    @GET("servicesPortRange")
+    Call<TypeCollection<ServicesPortRange>> list();
 
-  @GET("servicesPortRange")
-  Call<TypeCollection<ServicesPortRange>> list(@QueryMap Filters filters);
+    @GET("servicesPortRange")
+    Call<TypeCollection<ServicesPortRange>> list(@QueryMap Filters filters);
 
-  @GET("servicesPortRange/{id}")
-  Call<ServicesPortRange> get(@Path("id") String id);
+    @GET("servicesPortRange/{id}")
+    Call<ServicesPortRange> get(@Path("id") String id);
 
-  @POST("servicesPortRange")
-  Call<ServicesPortRange> create(@Body ServicesPortRange servicesPortRange);
+    @POST("servicesPortRange")
+    Call<ServicesPortRange> create(@Body ServicesPortRange servicesPortRange);
 
-  @PUT("servicesPortRange/{id}")
-  Call<ServicesPortRange> update(@Path("id") String id, @Body ServicesPortRange servicesPortRange);
+    @PUT("servicesPortRange/{id}")
+    Call<ServicesPortRange> update(@Path("id") String id, @Body ServicesPortRange servicesPortRange);
 
-  @DELETE("servicesPortRange/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("servicesPortRange/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

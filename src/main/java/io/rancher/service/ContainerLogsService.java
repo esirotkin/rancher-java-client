@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ContainerLogsService {
 
-  @GET("containerLogs")
-  Call<TypeCollection<ContainerLogs>> list();
+    @GET("containerLogs")
+    Call<TypeCollection<ContainerLogs>> list();
 
-  @GET("containerLogs")
-  Call<TypeCollection<ContainerLogs>> list(@QueryMap Filters filters);
+    @GET("containerLogs")
+    Call<TypeCollection<ContainerLogs>> list(@QueryMap Filters filters);
 
-  @GET("containerLogs/{id}")
-  Call<ContainerLogs> get(@Path("id") String id);
+    @GET("containerLogs/{id}")
+    Call<ContainerLogs> get(@Path("id") String id);
 
-  @POST("containerLogs")
-  Call<ContainerLogs> create(@Body ContainerLogs containerLogs);
+    @POST("containerLogs")
+    Call<ContainerLogs> create(@Body ContainerLogs containerLogs);
 
-  @PUT("containerLogs/{id}")
-  Call<ContainerLogs> update(@Path("id") String id, @Body ContainerLogs containerLogs);
+    @PUT("containerLogs/{id}")
+    Call<ContainerLogs> update(@Path("id") String id, @Body ContainerLogs containerLogs);
 
-  @DELETE("containerLogs/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("containerLogs/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

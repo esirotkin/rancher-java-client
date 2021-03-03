@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface InstanceConsoleInputService {
 
-  @GET("instanceConsoleInput")
-  Call<TypeCollection<InstanceConsoleInput>> list();
+    @GET("instanceConsoleInput")
+    Call<TypeCollection<InstanceConsoleInput>> list();
 
-  @GET("instanceConsoleInput")
-  Call<TypeCollection<InstanceConsoleInput>> list(@QueryMap Filters filters);
+    @GET("instanceConsoleInput")
+    Call<TypeCollection<InstanceConsoleInput>> list(@QueryMap Filters filters);
 
-  @GET("instanceConsoleInput/{id}")
-  Call<InstanceConsoleInput> get(@Path("id") String id);
+    @GET("instanceConsoleInput/{id}")
+    Call<InstanceConsoleInput> get(@Path("id") String id);
 
-  @POST("instanceConsoleInput")
-  Call<InstanceConsoleInput> create(@Body InstanceConsoleInput instanceConsoleInput);
+    @POST("instanceConsoleInput")
+    Call<InstanceConsoleInput> create(@Body InstanceConsoleInput instanceConsoleInput);
 
-  @PUT("instanceConsoleInput/{id}")
-  Call<InstanceConsoleInput> update(@Path("id") String id, @Body InstanceConsoleInput instanceConsoleInput);
+    @PUT("instanceConsoleInput/{id}")
+    Call<InstanceConsoleInput> update(@Path("id") String id, @Body InstanceConsoleInput instanceConsoleInput);
 
-  @DELETE("instanceConsoleInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("instanceConsoleInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

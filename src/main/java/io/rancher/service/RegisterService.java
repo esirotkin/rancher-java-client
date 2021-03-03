@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Register;
+import io.rancher.type.GenericObject;
 import io.rancher.type.InstanceStop;
 import io.rancher.type.Instance;
 
@@ -18,25 +19,28 @@ import retrofit2.http.QueryMap;
 
 public interface RegisterService {
 
-  @GET("register")
-  Call<TypeCollection<Register>> list();
+    @GET("register")
+    Call<TypeCollection<Register>> list();
 
-  @GET("register")
-  Call<TypeCollection<Register>> list(@QueryMap Filters filters);
+    @GET("register")
+    Call<TypeCollection<Register>> list(@QueryMap Filters filters);
 
-  @GET("register/{id}")
-  Call<Register> get(@Path("id") String id);
+    @GET("register/{id}")
+    Call<Register> get(@Path("id") String id);
 
-  @POST("register")
-  Call<Register> create(@Body Register register);
+    @POST("register")
+    Call<Register> create(@Body Register register);
 
-  @PUT("register/{id}")
-  Call<Register> update(@Path("id") String id, @Body Register register);
+    @PUT("register/{id}")
+    Call<Register> update(@Path("id") String id, @Body Register register);
 
-  @DELETE("register/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("register/{id}?action=stop")
-  Call<Instance> stop(@Path("id") String id, @Body InstanceStop instanceStop);
-  
+    @DELETE("register/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("register/{id}?action=remove")
+    Call<GenericObject> remove(@Path("id") String id);
+    
+    @POST("register/{id}?action=stop")
+    Call<Instance> stop(@Path("id") String id, @Body InstanceStop instanceStop);
+    
 }

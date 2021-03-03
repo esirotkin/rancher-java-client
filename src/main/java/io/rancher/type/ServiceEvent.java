@@ -1,15 +1,12 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class ServiceEvent extends AbstractType {
     
     private String accountId;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String description;
     
@@ -24,8 +21,6 @@ public class ServiceEvent extends AbstractType {
     private String kind;
     
     private String name;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -55,14 +50,6 @@ public class ServiceEvent extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -119,14 +106,6 @@ public class ServiceEvent extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

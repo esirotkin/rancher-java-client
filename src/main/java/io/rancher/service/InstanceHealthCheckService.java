@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface InstanceHealthCheckService {
 
-  @GET("instanceHealthCheck")
-  Call<TypeCollection<InstanceHealthCheck>> list();
+    @GET("instanceHealthCheck")
+    Call<TypeCollection<InstanceHealthCheck>> list();
 
-  @GET("instanceHealthCheck")
-  Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters filters);
+    @GET("instanceHealthCheck")
+    Call<TypeCollection<InstanceHealthCheck>> list(@QueryMap Filters filters);
 
-  @GET("instanceHealthCheck/{id}")
-  Call<InstanceHealthCheck> get(@Path("id") String id);
+    @GET("instanceHealthCheck/{id}")
+    Call<InstanceHealthCheck> get(@Path("id") String id);
 
-  @POST("instanceHealthCheck")
-  Call<InstanceHealthCheck> create(@Body InstanceHealthCheck instanceHealthCheck);
+    @POST("instanceHealthCheck")
+    Call<InstanceHealthCheck> create(@Body InstanceHealthCheck instanceHealthCheck);
 
-  @PUT("instanceHealthCheck/{id}")
-  Call<InstanceHealthCheck> update(@Path("id") String id, @Body InstanceHealthCheck instanceHealthCheck);
+    @PUT("instanceHealthCheck/{id}")
+    Call<InstanceHealthCheck> update(@Path("id") String id, @Body InstanceHealthCheck instanceHealthCheck);
 
-  @DELETE("instanceHealthCheck/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("instanceHealthCheck/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

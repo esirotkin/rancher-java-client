@@ -9,8 +9,6 @@ public class ContainerEvent extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private Map<String, Object> dockerInspect;
     
     private String externalFrom;
@@ -49,14 +47,6 @@ public class ContainerEvent extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public Map<String, Object> getDockerInspect() {

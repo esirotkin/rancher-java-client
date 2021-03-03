@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface RestartPolicyService {
 
-  @GET("restartPolicy")
-  Call<TypeCollection<RestartPolicy>> list();
+    @GET("restartPolicy")
+    Call<TypeCollection<RestartPolicy>> list();
 
-  @GET("restartPolicy")
-  Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters filters);
+    @GET("restartPolicy")
+    Call<TypeCollection<RestartPolicy>> list(@QueryMap Filters filters);
 
-  @GET("restartPolicy/{id}")
-  Call<RestartPolicy> get(@Path("id") String id);
+    @GET("restartPolicy/{id}")
+    Call<RestartPolicy> get(@Path("id") String id);
 
-  @POST("restartPolicy")
-  Call<RestartPolicy> create(@Body RestartPolicy restartPolicy);
+    @POST("restartPolicy")
+    Call<RestartPolicy> create(@Body RestartPolicy restartPolicy);
 
-  @PUT("restartPolicy/{id}")
-  Call<RestartPolicy> update(@Path("id") String id, @Body RestartPolicy restartPolicy);
+    @PUT("restartPolicy/{id}")
+    Call<RestartPolicy> update(@Path("id") String id, @Body RestartPolicy restartPolicy);
 
-  @DELETE("restartPolicy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("restartPolicy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

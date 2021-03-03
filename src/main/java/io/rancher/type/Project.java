@@ -1,40 +1,35 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
 
 public class Project extends AbstractType {
     
-    private Boolean allowSystemRole;
-    
     private String created;
     
-    private Map<String, Object> data;
+    private String defaultNetworkId;
     
     private String description;
     
-    private String kind;
+    private String healthState;
     
-    private Boolean kubernetes;
+    private Integer hostRemoveDelaySeconds;
+    
+    private String kind;
     
     private List<ProjectMember> members;
     
-    private Boolean mesos;
-    
     private String name;
     
-    private Boolean publicDns;
+    private String orchestration;
     
-    private String removeTime;
+    private String projectTemplateId;
     
     private String removed;
     
     private ServicesPortRange servicesPortRange;
     
     private String state;
-    
-    private Boolean swarm;
     
     private String transitioning;
     
@@ -44,15 +39,9 @@ public class Project extends AbstractType {
     
     private String uuid;
     
-    private Boolean virtualMachine;
+    private String version;
     
-    public Boolean getAllowSystemRole() {
-        return this.allowSystemRole;
-    }
-
-    public void setAllowSystemRole(Boolean allowSystemRole) {
-      this.allowSystemRole = allowSystemRole;
-    }
+    private Boolean virtualMachine;
     
     public String getCreated() {
         return this.created;
@@ -62,12 +51,12 @@ public class Project extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
+    public String getDefaultNetworkId() {
+        return this.defaultNetworkId;
     }
 
-    public void setData(Map<String, Object> data) {
-      this.data = data;
+    public void setDefaultNetworkId(String defaultNetworkId) {
+      this.defaultNetworkId = defaultNetworkId;
     }
     
     public String getDescription() {
@@ -78,20 +67,28 @@ public class Project extends AbstractType {
       this.description = description;
     }
     
+    public String getHealthState() {
+        return this.healthState;
+    }
+
+    public void setHealthState(String healthState) {
+      this.healthState = healthState;
+    }
+    
+    public Integer getHostRemoveDelaySeconds() {
+        return this.hostRemoveDelaySeconds;
+    }
+
+    public void setHostRemoveDelaySeconds(Integer hostRemoveDelaySeconds) {
+      this.hostRemoveDelaySeconds = hostRemoveDelaySeconds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
 
     public void setKind(String kind) {
       this.kind = kind;
-    }
-    
-    public Boolean getKubernetes() {
-        return this.kubernetes;
-    }
-
-    public void setKubernetes(Boolean kubernetes) {
-      this.kubernetes = kubernetes;
     }
     
     public List<ProjectMember> getMembers() {
@@ -102,14 +99,6 @@ public class Project extends AbstractType {
       this.members = members;
     }
     
-    public Boolean getMesos() {
-        return this.mesos;
-    }
-
-    public void setMesos(Boolean mesos) {
-      this.mesos = mesos;
-    }
-    
     public String getName() {
         return this.name;
     }
@@ -118,20 +107,20 @@ public class Project extends AbstractType {
       this.name = name;
     }
     
-    public Boolean getPublicDns() {
-        return this.publicDns;
+    public String getOrchestration() {
+        return this.orchestration;
     }
 
-    public void setPublicDns(Boolean publicDns) {
-      this.publicDns = publicDns;
+    public void setOrchestration(String orchestration) {
+      this.orchestration = orchestration;
     }
     
-    public String getRemoveTime() {
-        return this.removeTime;
+    public String getProjectTemplateId() {
+        return this.projectTemplateId;
     }
 
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
+    public void setProjectTemplateId(String projectTemplateId) {
+      this.projectTemplateId = projectTemplateId;
     }
     
     public String getRemoved() {
@@ -156,14 +145,6 @@ public class Project extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
-    }
-    
-    public Boolean getSwarm() {
-        return this.swarm;
-    }
-
-    public void setSwarm(Boolean swarm) {
-      this.swarm = swarm;
     }
     
     public String getTransitioning() {
@@ -196,6 +177,14 @@ public class Project extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+      this.version = version;
     }
     
     public Boolean getVirtualMachine() {

@@ -1,14 +1,15 @@
 package io.rancher;
 
+import java.net.URL;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.rancher.client.BasicAuthInterceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
-
-import java.net.URL;
 
 public class Rancher {
 
@@ -19,12 +20,10 @@ public class Rancher {
                 BasicAuthInterceptor.auth(config.getAccessKey(), config.getSecretKey())
         );
 
-        this.retrofit = new Retrofit.Builder()
-                .baseUrl(config.getUrl().toString())
-                .client(builder.build())
-                .addConverterFactory(JacksonConverterFactory.create(configureObjectMapper()))
-                .build();
-
+        this.retrofit = new Retrofit.Builder().baseUrl(config.getUrl().toString())
+                                              .client(builder.build())
+                                              .addConverterFactory(JacksonConverterFactory.create(configureObjectMapper()))
+                                              .build();
     }
 
     private ObjectMapper configureObjectMapper() {
@@ -39,7 +38,6 @@ public class Rancher {
     }
 
     public static class Config {
-
         private URL url;
         private String accessKey;
         private String secretKey;
@@ -74,4 +72,5 @@ public class Rancher {
             this.secretKey = secretKey;
         }
     }
+
 }

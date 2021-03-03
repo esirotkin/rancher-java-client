@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface RevertToSnapshotInputService {
 
-  @GET("revertToSnapshotInput")
-  Call<TypeCollection<RevertToSnapshotInput>> list();
+    @GET("revertToSnapshotInput")
+    Call<TypeCollection<RevertToSnapshotInput>> list();
 
-  @GET("revertToSnapshotInput")
-  Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap Filters filters);
+    @GET("revertToSnapshotInput")
+    Call<TypeCollection<RevertToSnapshotInput>> list(@QueryMap Filters filters);
 
-  @GET("revertToSnapshotInput/{id}")
-  Call<RevertToSnapshotInput> get(@Path("id") String id);
+    @GET("revertToSnapshotInput/{id}")
+    Call<RevertToSnapshotInput> get(@Path("id") String id);
 
-  @POST("revertToSnapshotInput")
-  Call<RevertToSnapshotInput> create(@Body RevertToSnapshotInput revertToSnapshotInput);
+    @POST("revertToSnapshotInput")
+    Call<RevertToSnapshotInput> create(@Body RevertToSnapshotInput revertToSnapshotInput);
 
-  @PUT("revertToSnapshotInput/{id}")
-  Call<RevertToSnapshotInput> update(@Path("id") String id, @Body RevertToSnapshotInput revertToSnapshotInput);
+    @PUT("revertToSnapshotInput/{id}")
+    Call<RevertToSnapshotInput> update(@Path("id") String id, @Body RevertToSnapshotInput revertToSnapshotInput);
 
-  @DELETE("revertToSnapshotInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("revertToSnapshotInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

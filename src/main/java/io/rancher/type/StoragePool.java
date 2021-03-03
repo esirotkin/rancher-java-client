@@ -2,7 +2,6 @@ package io.rancher.type;
 
 import io.rancher.base.AbstractType;
 import java.util.List;
-import java.util.Map;
 
 public class StoragePool extends AbstractType {
     
@@ -12,23 +11,23 @@ public class StoragePool extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
     
     private String driverName;
     
     private String externalId;
     
+    private List<String> hostIds;
+    
     private String kind;
     
     private String name;
     
-    private String removeTime;
-    
     private String removed;
     
     private String state;
+    
+    private String storageDriverId;
     
     private String transitioning;
     
@@ -41,6 +40,8 @@ public class StoragePool extends AbstractType {
     private String volumeAccessMode;
     
     private List<String> volumeCapabilities;
+    
+    private List<String> volumeIds;
     
     public String getAccountId() {
         return this.accountId;
@@ -64,14 +65,6 @@ public class StoragePool extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getDescription() {
@@ -98,6 +91,14 @@ public class StoragePool extends AbstractType {
       this.externalId = externalId;
     }
     
+    public List<String> getHostIds() {
+        return this.hostIds;
+    }
+
+    public void setHostIds(List<String> hostIds) {
+      this.hostIds = hostIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -114,14 +115,6 @@ public class StoragePool extends AbstractType {
       this.name = name;
     }
     
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
-    }
-    
     public String getRemoved() {
         return this.removed;
     }
@@ -136,6 +129,14 @@ public class StoragePool extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public String getStorageDriverId() {
+        return this.storageDriverId;
+    }
+
+    public void setStorageDriverId(String storageDriverId) {
+      this.storageDriverId = storageDriverId;
     }
     
     public String getTransitioning() {
@@ -184,6 +185,14 @@ public class StoragePool extends AbstractType {
 
     public void setVolumeCapabilities(List<String> volumeCapabilities) {
       this.volumeCapabilities = volumeCapabilities;
+    }
+    
+    public List<String> getVolumeIds() {
+        return this.volumeIds;
+    }
+
+    public void setVolumeIds(List<String> volumeIds) {
+      this.volumeIds = volumeIds;
     }
     
 }

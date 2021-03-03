@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface NfsConfigService {
 
-  @GET("nfsConfig")
-  Call<TypeCollection<NfsConfig>> list();
+    @GET("nfsConfig")
+    Call<TypeCollection<NfsConfig>> list();
 
-  @GET("nfsConfig")
-  Call<TypeCollection<NfsConfig>> list(@QueryMap Filters filters);
+    @GET("nfsConfig")
+    Call<TypeCollection<NfsConfig>> list(@QueryMap Filters filters);
 
-  @GET("nfsConfig/{id}")
-  Call<NfsConfig> get(@Path("id") String id);
+    @GET("nfsConfig/{id}")
+    Call<NfsConfig> get(@Path("id") String id);
 
-  @POST("nfsConfig")
-  Call<NfsConfig> create(@Body NfsConfig nfsConfig);
+    @POST("nfsConfig")
+    Call<NfsConfig> create(@Body NfsConfig nfsConfig);
 
-  @PUT("nfsConfig/{id}")
-  Call<NfsConfig> update(@Path("id") String id, @Body NfsConfig nfsConfig);
+    @PUT("nfsConfig/{id}")
+    Call<NfsConfig> update(@Path("id") String id, @Body NfsConfig nfsConfig);
 
-  @DELETE("nfsConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("nfsConfig/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

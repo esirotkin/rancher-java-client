@@ -1,6 +1,7 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 import java.util.Map;
 
 public class Network extends AbstractType {
@@ -9,19 +10,31 @@ public class Network extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
+    private String defaultPolicyAction;
     
     private String description;
     
+    private List<String> dns;
+    
+    private List<String> dnsSearch;
+    
+    private Boolean hostPorts;
+    
     private String kind;
+    
+    private Map<String, Object> metadata;
     
     private String name;
     
-    private String removeTime;
+    private String networkDriverId;
+    
+    private List<NetworkPolicyRule> policy;
     
     private String removed;
     
     private String state;
+    
+    private List<Subnet> subnets;
     
     private String transitioning;
     
@@ -47,12 +60,12 @@ public class Network extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
+    public String getDefaultPolicyAction() {
+        return this.defaultPolicyAction;
     }
 
-    public void setData(Map<String, Object> data) {
-      this.data = data;
+    public void setDefaultPolicyAction(String defaultPolicyAction) {
+      this.defaultPolicyAction = defaultPolicyAction;
     }
     
     public String getDescription() {
@@ -63,12 +76,44 @@ public class Network extends AbstractType {
       this.description = description;
     }
     
+    public List<String> getDns() {
+        return this.dns;
+    }
+
+    public void setDns(List<String> dns) {
+      this.dns = dns;
+    }
+    
+    public List<String> getDnsSearch() {
+        return this.dnsSearch;
+    }
+
+    public void setDnsSearch(List<String> dnsSearch) {
+      this.dnsSearch = dnsSearch;
+    }
+    
+    public Boolean getHostPorts() {
+        return this.hostPorts;
+    }
+
+    public void setHostPorts(Boolean hostPorts) {
+      this.hostPorts = hostPorts;
+    }
+    
     public String getKind() {
         return this.kind;
     }
 
     public void setKind(String kind) {
       this.kind = kind;
+    }
+    
+    public Map<String, Object> getMetadata() {
+        return this.metadata;
+    }
+
+    public void setMetadata(Map<String, Object> metadata) {
+      this.metadata = metadata;
     }
     
     public String getName() {
@@ -79,12 +124,20 @@ public class Network extends AbstractType {
       this.name = name;
     }
     
-    public String getRemoveTime() {
-        return this.removeTime;
+    public String getNetworkDriverId() {
+        return this.networkDriverId;
     }
 
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
+    public void setNetworkDriverId(String networkDriverId) {
+      this.networkDriverId = networkDriverId;
+    }
+    
+    public List<NetworkPolicyRule> getPolicy() {
+        return this.policy;
+    }
+
+    public void setPolicy(List<NetworkPolicyRule> policy) {
+      this.policy = policy;
     }
     
     public String getRemoved() {
@@ -101,6 +154,14 @@ public class Network extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public List<Subnet> getSubnets() {
+        return this.subnets;
+    }
+
+    public void setSubnets(List<Subnet> subnets) {
+      this.subnets = subnets;
     }
     
     public String getTransitioning() {

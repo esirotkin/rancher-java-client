@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface InstanceStopService {
 
-  @GET("instanceStop")
-  Call<TypeCollection<InstanceStop>> list();
+    @GET("instanceStop")
+    Call<TypeCollection<InstanceStop>> list();
 
-  @GET("instanceStop")
-  Call<TypeCollection<InstanceStop>> list(@QueryMap Filters filters);
+    @GET("instanceStop")
+    Call<TypeCollection<InstanceStop>> list(@QueryMap Filters filters);
 
-  @GET("instanceStop/{id}")
-  Call<InstanceStop> get(@Path("id") String id);
+    @GET("instanceStop/{id}")
+    Call<InstanceStop> get(@Path("id") String id);
 
-  @POST("instanceStop")
-  Call<InstanceStop> create(@Body InstanceStop instanceStop);
+    @POST("instanceStop")
+    Call<InstanceStop> create(@Body InstanceStop instanceStop);
 
-  @PUT("instanceStop/{id}")
-  Call<InstanceStop> update(@Path("id") String id, @Body InstanceStop instanceStop);
+    @PUT("instanceStop/{id}")
+    Call<InstanceStop> update(@Path("id") String id, @Body InstanceStop instanceStop);
 
-  @DELETE("instanceStop/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("instanceStop/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

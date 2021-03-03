@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ServiceLinkService {
 
-  @GET("serviceLink")
-  Call<TypeCollection<ServiceLink>> list();
+    @GET("serviceLink")
+    Call<TypeCollection<ServiceLink>> list();
 
-  @GET("serviceLink")
-  Call<TypeCollection<ServiceLink>> list(@QueryMap Filters filters);
+    @GET("serviceLink")
+    Call<TypeCollection<ServiceLink>> list(@QueryMap Filters filters);
 
-  @GET("serviceLink/{id}")
-  Call<ServiceLink> get(@Path("id") String id);
+    @GET("serviceLink/{id}")
+    Call<ServiceLink> get(@Path("id") String id);
 
-  @POST("serviceLink")
-  Call<ServiceLink> create(@Body ServiceLink serviceLink);
+    @POST("serviceLink")
+    Call<ServiceLink> create(@Body ServiceLink serviceLink);
 
-  @PUT("serviceLink/{id}")
-  Call<ServiceLink> update(@Path("id") String id, @Body ServiceLink serviceLink);
+    @PUT("serviceLink/{id}")
+    Call<ServiceLink> update(@Path("id") String id, @Body ServiceLink serviceLink);
 
-  @DELETE("serviceLink/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("serviceLink/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

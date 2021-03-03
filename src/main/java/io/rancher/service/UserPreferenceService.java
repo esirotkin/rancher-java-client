@@ -16,37 +16,34 @@ import retrofit2.http.QueryMap;
 
 public interface UserPreferenceService {
 
-  @GET("userPreference")
-  Call<TypeCollection<UserPreference>> list();
+    @GET("userPreference")
+    Call<TypeCollection<UserPreference>> list();
 
-  @GET("userPreference")
-  Call<TypeCollection<UserPreference>> list(@QueryMap Filters filters);
+    @GET("userPreference")
+    Call<TypeCollection<UserPreference>> list(@QueryMap Filters filters);
 
-  @GET("userPreference/{id}")
-  Call<UserPreference> get(@Path("id") String id);
+    @GET("userPreference/{id}")
+    Call<UserPreference> get(@Path("id") String id);
 
-  @POST("userPreference")
-  Call<UserPreference> create(@Body UserPreference userPreference);
+    @POST("userPreference")
+    Call<UserPreference> create(@Body UserPreference userPreference);
 
-  @PUT("userPreference/{id}")
-  Call<UserPreference> update(@Path("id") String id, @Body UserPreference userPreference);
+    @PUT("userPreference/{id}")
+    Call<UserPreference> update(@Path("id") String id, @Body UserPreference userPreference);
 
-  @DELETE("userPreference/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("userPreference/{id}?action=activate")
-  Call<UserPreference> activate(@Path("id") String id);
-  
-  @POST("userPreference/{id}?action=deactivate")
-  Call<UserPreference> deactivate(@Path("id") String id);
-  
-  @POST("userPreference/{id}?action=purge")
-  Call<UserPreference> purge(@Path("id") String id);
-  
-  @POST("userPreference/{id}?action=remove")
-  Call<UserPreference> remove(@Path("id") String id);
-  
-  @POST("userPreference/{id}?action=restore")
-  Call<UserPreference> restore(@Path("id") String id);
-  
+    @DELETE("userPreference/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("userPreference/{id}?action=activate")
+    Call<UserPreference> activate(@Path("id") String id);
+    
+    @POST("userPreference/{id}?action=deactivate")
+    Call<UserPreference> deactivate(@Path("id") String id);
+    
+    @POST("userPreference/{id}?action=purge")
+    Call<UserPreference> purge(@Path("id") String id);
+    
+    @POST("userPreference/{id}?action=remove")
+    Call<UserPreference> remove(@Path("id") String id);
+    
 }

@@ -16,25 +16,25 @@ import retrofit2.http.QueryMap;
 
 public interface BackupService {
 
-  @GET("backup")
-  Call<TypeCollection<Backup>> list();
+    @GET("backup")
+    Call<TypeCollection<Backup>> list();
 
-  @GET("backup")
-  Call<TypeCollection<Backup>> list(@QueryMap Filters filters);
+    @GET("backup")
+    Call<TypeCollection<Backup>> list(@QueryMap Filters filters);
 
-  @GET("backup/{id}")
-  Call<Backup> get(@Path("id") String id);
+    @GET("backup/{id}")
+    Call<Backup> get(@Path("id") String id);
 
-  @POST("backup")
-  Call<Backup> create(@Body Backup backup);
+    @POST("backup")
+    Call<Backup> create(@Body Backup backup);
 
-  @PUT("backup/{id}")
-  Call<Backup> update(@Path("id") String id, @Body Backup backup);
+    @PUT("backup/{id}")
+    Call<Backup> update(@Path("id") String id, @Body Backup backup);
 
-  @DELETE("backup/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("backup/{id}?action=remove")
-  Call<Backup> remove(@Path("id") String id);
-  
+    @DELETE("backup/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("backup/{id}?action=remove")
+    Call<Backup> remove(@Path("id") String id);
+    
 }

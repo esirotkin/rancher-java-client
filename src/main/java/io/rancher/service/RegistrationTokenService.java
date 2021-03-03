@@ -17,34 +17,34 @@ import retrofit2.http.QueryMap;
 
 public interface RegistrationTokenService {
 
-  @GET("registrationToken")
-  Call<TypeCollection<RegistrationToken>> list();
+    @GET("registrationToken")
+    Call<TypeCollection<RegistrationToken>> list();
 
-  @GET("registrationToken")
-  Call<TypeCollection<RegistrationToken>> list(@QueryMap Filters filters);
+    @GET("registrationToken")
+    Call<TypeCollection<RegistrationToken>> list(@QueryMap Filters filters);
 
-  @GET("registrationToken/{id}")
-  Call<RegistrationToken> get(@Path("id") String id);
+    @GET("registrationToken/{id}")
+    Call<RegistrationToken> get(@Path("id") String id);
 
-  @POST("registrationToken")
-  Call<RegistrationToken> create(@Body RegistrationToken registrationToken);
+    @POST("registrationToken")
+    Call<RegistrationToken> create(@Body RegistrationToken registrationToken);
 
-  @PUT("registrationToken/{id}")
-  Call<RegistrationToken> update(@Path("id") String id, @Body RegistrationToken registrationToken);
+    @PUT("registrationToken/{id}")
+    Call<RegistrationToken> update(@Path("id") String id, @Body RegistrationToken registrationToken);
 
-  @DELETE("registrationToken/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("registrationToken/{id}?action=activate")
-  Call<Credential> activate(@Path("id") String id);
-  
-  @POST("registrationToken/{id}?action=deactivate")
-  Call<Credential> deactivate(@Path("id") String id);
-  
-  @POST("registrationToken/{id}?action=purge")
-  Call<Credential> purge(@Path("id") String id);
-  
-  @POST("registrationToken/{id}?action=remove")
-  Call<Credential> remove(@Path("id") String id);
-  
+    @DELETE("registrationToken/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("registrationToken/{id}?action=activate")
+    Call<Credential> activate(@Path("id") String id);
+    
+    @POST("registrationToken/{id}?action=deactivate")
+    Call<Credential> deactivate(@Path("id") String id);
+    
+    @POST("registrationToken/{id}?action=purge")
+    Call<Credential> purge(@Path("id") String id);
+    
+    @POST("registrationToken/{id}?action=remove")
+    Call<Credential> remove(@Path("id") String id);
+    
 }

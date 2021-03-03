@@ -16,25 +16,25 @@ import retrofit2.http.QueryMap;
 
 public interface LabelService {
 
-  @GET("label")
-  Call<TypeCollection<Label>> list();
+    @GET("label")
+    Call<TypeCollection<Label>> list();
 
-  @GET("label")
-  Call<TypeCollection<Label>> list(@QueryMap Filters filters);
+    @GET("label")
+    Call<TypeCollection<Label>> list(@QueryMap Filters filters);
 
-  @GET("label/{id}")
-  Call<Label> get(@Path("id") String id);
+    @GET("label/{id}")
+    Call<Label> get(@Path("id") String id);
 
-  @POST("label")
-  Call<Label> create(@Body Label label);
+    @POST("label")
+    Call<Label> create(@Body Label label);
 
-  @PUT("label/{id}")
-  Call<Label> update(@Path("id") String id, @Body Label label);
+    @PUT("label/{id}")
+    Call<Label> update(@Path("id") String id, @Body Label label);
 
-  @DELETE("label/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("label/{id}?action=remove")
-  Call<Label> remove(@Path("id") String id);
-  
+    @DELETE("label/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("label/{id}?action=remove")
+    Call<Label> remove(@Path("id") String id);
+    
 }

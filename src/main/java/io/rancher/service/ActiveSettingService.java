@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface ActiveSettingService {
 
-  @GET("activeSetting")
-  Call<TypeCollection<ActiveSetting>> list();
+    @GET("activeSetting")
+    Call<TypeCollection<ActiveSetting>> list();
 
-  @GET("activeSetting")
-  Call<TypeCollection<ActiveSetting>> list(@QueryMap Filters filters);
+    @GET("activeSetting")
+    Call<TypeCollection<ActiveSetting>> list(@QueryMap Filters filters);
 
-  @GET("activeSetting/{id}")
-  Call<ActiveSetting> get(@Path("id") String id);
+    @GET("activeSetting/{id}")
+    Call<ActiveSetting> get(@Path("id") String id);
 
-  @POST("activeSetting")
-  Call<ActiveSetting> create(@Body ActiveSetting activeSetting);
+    @POST("activeSetting")
+    Call<ActiveSetting> create(@Body ActiveSetting activeSetting);
 
-  @PUT("activeSetting/{id}")
-  Call<ActiveSetting> update(@Path("id") String id, @Body ActiveSetting activeSetting);
+    @PUT("activeSetting/{id}")
+    Call<ActiveSetting> update(@Path("id") String id, @Body ActiveSetting activeSetting);
 
-  @DELETE("activeSetting/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("activeSetting/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

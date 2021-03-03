@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface TypeDocumentationService {
 
-  @GET("typeDocumentation")
-  Call<TypeCollection<TypeDocumentation>> list();
+    @GET("typeDocumentation")
+    Call<TypeCollection<TypeDocumentation>> list();
 
-  @GET("typeDocumentation")
-  Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters filters);
+    @GET("typeDocumentation")
+    Call<TypeCollection<TypeDocumentation>> list(@QueryMap Filters filters);
 
-  @GET("typeDocumentation/{id}")
-  Call<TypeDocumentation> get(@Path("id") String id);
+    @GET("typeDocumentation/{id}")
+    Call<TypeDocumentation> get(@Path("id") String id);
 
-  @POST("typeDocumentation")
-  Call<TypeDocumentation> create(@Body TypeDocumentation typeDocumentation);
+    @POST("typeDocumentation")
+    Call<TypeDocumentation> create(@Body TypeDocumentation typeDocumentation);
 
-  @PUT("typeDocumentation/{id}")
-  Call<TypeDocumentation> update(@Path("id") String id, @Body TypeDocumentation typeDocumentation);
+    @PUT("typeDocumentation/{id}")
+    Call<TypeDocumentation> update(@Path("id") String id, @Body TypeDocumentation typeDocumentation);
 
-  @DELETE("typeDocumentation/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("typeDocumentation/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

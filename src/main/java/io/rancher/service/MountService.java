@@ -16,28 +16,28 @@ import retrofit2.http.QueryMap;
 
 public interface MountService {
 
-  @GET("mount")
-  Call<TypeCollection<Mount>> list();
+    @GET("mount")
+    Call<TypeCollection<Mount>> list();
 
-  @GET("mount")
-  Call<TypeCollection<Mount>> list(@QueryMap Filters filters);
+    @GET("mount")
+    Call<TypeCollection<Mount>> list(@QueryMap Filters filters);
 
-  @GET("mount/{id}")
-  Call<Mount> get(@Path("id") String id);
+    @GET("mount/{id}")
+    Call<Mount> get(@Path("id") String id);
 
-  @POST("mount")
-  Call<Mount> create(@Body Mount mount);
+    @POST("mount")
+    Call<Mount> create(@Body Mount mount);
 
-  @PUT("mount/{id}")
-  Call<Mount> update(@Path("id") String id, @Body Mount mount);
+    @PUT("mount/{id}")
+    Call<Mount> update(@Path("id") String id, @Body Mount mount);
 
-  @DELETE("mount/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("mount/{id}?action=deactivate")
-  Call<Mount> deactivate(@Path("id") String id);
-  
-  @POST("mount/{id}?action=remove")
-  Call<Mount> remove(@Path("id") String id);
-  
+    @DELETE("mount/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("mount/{id}?action=deactivate")
+    Call<Mount> deactivate(@Path("id") String id);
+    
+    @POST("mount/{id}?action=remove")
+    Call<Mount> remove(@Path("id") String id);
+    
 }

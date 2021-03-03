@@ -16,25 +16,25 @@ import retrofit2.http.QueryMap;
 
 public interface CertificateService {
 
-  @GET("certificate")
-  Call<TypeCollection<Certificate>> list();
+    @GET("certificate")
+    Call<TypeCollection<Certificate>> list();
 
-  @GET("certificate")
-  Call<TypeCollection<Certificate>> list(@QueryMap Filters filters);
+    @GET("certificate")
+    Call<TypeCollection<Certificate>> list(@QueryMap Filters filters);
 
-  @GET("certificate/{id}")
-  Call<Certificate> get(@Path("id") String id);
+    @GET("certificate/{id}")
+    Call<Certificate> get(@Path("id") String id);
 
-  @POST("certificate")
-  Call<Certificate> create(@Body Certificate certificate);
+    @POST("certificate")
+    Call<Certificate> create(@Body Certificate certificate);
 
-  @PUT("certificate/{id}")
-  Call<Certificate> update(@Path("id") String id, @Body Certificate certificate);
+    @PUT("certificate/{id}")
+    Call<Certificate> update(@Path("id") String id, @Body Certificate certificate);
 
-  @DELETE("certificate/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("certificate/{id}?action=remove")
-  Call<Certificate> remove(@Path("id") String id);
-  
+    @DELETE("certificate/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("certificate/{id}?action=remove")
+    Call<Certificate> remove(@Path("id") String id);
+    
 }

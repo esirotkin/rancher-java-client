@@ -7,11 +7,7 @@ public class ActiveSetting extends AbstractType {
     
     private Map<String, Object> activeValue;
     
-    private Boolean inDb;
-    
     private String name;
-    
-    private String source;
     
     private String value;
     
@@ -23,28 +19,12 @@ public class ActiveSetting extends AbstractType {
       this.activeValue = activeValue;
     }
     
-    public Boolean getInDb() {
-        return this.inDb;
-    }
-
-    public void setInDb(Boolean inDb) {
-      this.inDb = inDb;
-    }
-    
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getSource() {
-        return this.source;
-    }
-
-    public void setSource(String source) {
-      this.source = source;
     }
     
     public String getValue() {

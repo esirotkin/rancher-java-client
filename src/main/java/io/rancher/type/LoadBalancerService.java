@@ -10,19 +10,11 @@ public class LoadBalancerService extends AbstractType {
     
     private Boolean assignServiceIpAddress;
     
-    private List<String> certificateIds;
-    
     private String created;
     
     private Integer currentScale;
     
-    private Map<String, Object> data;
-    
-    private String defaultCertificateId;
-    
     private String description;
-    
-    private String environmentId;
     
     private String externalId;
     
@@ -30,19 +22,21 @@ public class LoadBalancerService extends AbstractType {
     
     private String healthState;
     
+    private List<String> instanceIds;
+    
     private String kind;
     
     private LaunchConfig launchConfig;
     
-    private LoadBalancerConfig loadBalancerConfig;
+    private LbConfig lbConfig;
+    
+    private Map<String, Object> linkedServices;
     
     private Map<String, Object> metadata;
     
     private String name;
     
     private List<PublicEndpoint> publicEndpoints;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -54,9 +48,13 @@ public class LoadBalancerService extends AbstractType {
     
     private String selectorLink;
     
+    private String stackId;
+    
     private Boolean startOnCreate;
     
     private String state;
+    
+    private Boolean system;
     
     private String transitioning;
     
@@ -86,14 +84,6 @@ public class LoadBalancerService extends AbstractType {
       this.assignServiceIpAddress = assignServiceIpAddress;
     }
     
-    public List<String> getCertificateIds() {
-        return this.certificateIds;
-    }
-
-    public void setCertificateIds(List<String> certificateIds) {
-      this.certificateIds = certificateIds;
-    }
-    
     public String getCreated() {
         return this.created;
     }
@@ -110,36 +100,12 @@ public class LoadBalancerService extends AbstractType {
       this.currentScale = currentScale;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
-    public String getDefaultCertificateId() {
-        return this.defaultCertificateId;
-    }
-
-    public void setDefaultCertificateId(String defaultCertificateId) {
-      this.defaultCertificateId = defaultCertificateId;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getEnvironmentId() {
-        return this.environmentId;
-    }
-
-    public void setEnvironmentId(String environmentId) {
-      this.environmentId = environmentId;
     }
     
     public String getExternalId() {
@@ -166,6 +132,14 @@ public class LoadBalancerService extends AbstractType {
       this.healthState = healthState;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -182,12 +156,20 @@ public class LoadBalancerService extends AbstractType {
       this.launchConfig = launchConfig;
     }
     
-    public LoadBalancerConfig getLoadBalancerConfig() {
-        return this.loadBalancerConfig;
+    public LbConfig getLbConfig() {
+        return this.lbConfig;
     }
 
-    public void setLoadBalancerConfig(LoadBalancerConfig loadBalancerConfig) {
-      this.loadBalancerConfig = loadBalancerConfig;
+    public void setLbConfig(LbConfig lbConfig) {
+      this.lbConfig = lbConfig;
+    }
+    
+    public Map<String, Object> getLinkedServices() {
+        return this.linkedServices;
+    }
+
+    public void setLinkedServices(Map<String, Object> linkedServices) {
+      this.linkedServices = linkedServices;
     }
     
     public Map<String, Object> getMetadata() {
@@ -212,14 +194,6 @@ public class LoadBalancerService extends AbstractType {
 
     public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
       this.publicEndpoints = publicEndpoints;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {
@@ -262,6 +236,14 @@ public class LoadBalancerService extends AbstractType {
       this.selectorLink = selectorLink;
     }
     
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public Boolean getStartOnCreate() {
         return this.startOnCreate;
     }
@@ -276,6 +258,14 @@ public class LoadBalancerService extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public Boolean getSystem() {
+        return this.system;
+    }
+
+    public void setSystem(Boolean system) {
+      this.system = system;
     }
     
     public String getTransitioning() {

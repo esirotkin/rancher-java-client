@@ -1,34 +1,64 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class Host extends AbstractType {
     
     private String accountId;
     
-    private String agentId;
+    private String agentIpAddress;
     
     private String agentState;
     
-    private String apiProxy;
+    private String authCertificateAuthority;
+    
+    private String authKey;
     
     private Integer computeTotal;
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
+    
+    private String dockerVersion;
+    
+    private String driver;
+    
+    private Map<String, Object> engineEnv;
+    
+    private List<String> engineInsecureRegistry;
+    
+    private String engineInstallUrl;
+    
+    private Map<String, Object> engineLabel;
+    
+    private Map<String, Object> engineOpt;
+    
+    private List<String> engineRegistryMirror;
+    
+    private String engineStorageDriver;
+    
+    private GenericConfig genericConfig;
+    
+    private String hostTemplateId;
     
     private String hostname;
     
     private Map<String, Object> info;
     
+    private List<String> instanceIds;
+    
     private String kind;
     
     private Map<String, Object> labels;
+    
+    private Integer localStorageMb;
+    
+    private Integer memory;
+    
+    private Integer milliCpu;
     
     private String name;
     
@@ -36,9 +66,9 @@ public class Host extends AbstractType {
     
     private List<PublicEndpoint> publicEndpoints;
     
-    private String removeTime;
-    
     private String removed;
+    
+    private String stackId;
     
     private String state;
     
@@ -58,12 +88,12 @@ public class Host extends AbstractType {
       this.accountId = accountId;
     }
     
-    public String getAgentId() {
-        return this.agentId;
+    public String getAgentIpAddress() {
+        return this.agentIpAddress;
     }
 
-    public void setAgentId(String agentId) {
-      this.agentId = agentId;
+    public void setAgentIpAddress(String agentIpAddress) {
+      this.agentIpAddress = agentIpAddress;
     }
     
     public String getAgentState() {
@@ -74,12 +104,20 @@ public class Host extends AbstractType {
       this.agentState = agentState;
     }
     
-    public String getApiProxy() {
-        return this.apiProxy;
+    public String getAuthCertificateAuthority() {
+        return this.authCertificateAuthority;
     }
 
-    public void setApiProxy(String apiProxy) {
-      this.apiProxy = apiProxy;
+    public void setAuthCertificateAuthority(String authCertificateAuthority) {
+      this.authCertificateAuthority = authCertificateAuthority;
+    }
+    
+    public String getAuthKey() {
+        return this.authKey;
+    }
+
+    public void setAuthKey(String authKey) {
+      this.authKey = authKey;
     }
     
     public Integer getComputeTotal() {
@@ -98,20 +136,100 @@ public class Host extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
+    }
+    
+    public String getDockerVersion() {
+        return this.dockerVersion;
+    }
+
+    public void setDockerVersion(String dockerVersion) {
+      this.dockerVersion = dockerVersion;
+    }
+    
+    public String getDriver() {
+        return this.driver;
+    }
+
+    public void setDriver(String driver) {
+      this.driver = driver;
+    }
+    
+    public Map<String, Object> getEngineEnv() {
+        return this.engineEnv;
+    }
+
+    public void setEngineEnv(Map<String, Object> engineEnv) {
+      this.engineEnv = engineEnv;
+    }
+    
+    public List<String> getEngineInsecureRegistry() {
+        return this.engineInsecureRegistry;
+    }
+
+    public void setEngineInsecureRegistry(List<String> engineInsecureRegistry) {
+      this.engineInsecureRegistry = engineInsecureRegistry;
+    }
+    
+    public String getEngineInstallUrl() {
+        return this.engineInstallUrl;
+    }
+
+    public void setEngineInstallUrl(String engineInstallUrl) {
+      this.engineInstallUrl = engineInstallUrl;
+    }
+    
+    public Map<String, Object> getEngineLabel() {
+        return this.engineLabel;
+    }
+
+    public void setEngineLabel(Map<String, Object> engineLabel) {
+      this.engineLabel = engineLabel;
+    }
+    
+    public Map<String, Object> getEngineOpt() {
+        return this.engineOpt;
+    }
+
+    public void setEngineOpt(Map<String, Object> engineOpt) {
+      this.engineOpt = engineOpt;
+    }
+    
+    public List<String> getEngineRegistryMirror() {
+        return this.engineRegistryMirror;
+    }
+
+    public void setEngineRegistryMirror(List<String> engineRegistryMirror) {
+      this.engineRegistryMirror = engineRegistryMirror;
+    }
+    
+    public String getEngineStorageDriver() {
+        return this.engineStorageDriver;
+    }
+
+    public void setEngineStorageDriver(String engineStorageDriver) {
+      this.engineStorageDriver = engineStorageDriver;
+    }
+    
+    public GenericConfig getGenericConfig() {
+        return this.genericConfig;
+    }
+
+    public void setGenericConfig(GenericConfig genericConfig) {
+      this.genericConfig = genericConfig;
+    }
+    
+    public String getHostTemplateId() {
+        return this.hostTemplateId;
+    }
+
+    public void setHostTemplateId(String hostTemplateId) {
+      this.hostTemplateId = hostTemplateId;
     }
     
     public String getHostname() {
@@ -130,6 +248,14 @@ public class Host extends AbstractType {
       this.info = info;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -144,6 +270,30 @@ public class Host extends AbstractType {
 
     public void setLabels(Map<String, Object> labels) {
       this.labels = labels;
+    }
+    
+    public Integer getLocalStorageMb() {
+        return this.localStorageMb;
+    }
+
+    public void setLocalStorageMb(Integer localStorageMb) {
+      this.localStorageMb = localStorageMb;
+    }
+    
+    public Integer getMemory() {
+        return this.memory;
+    }
+
+    public void setMemory(Integer memory) {
+      this.memory = memory;
+    }
+    
+    public Integer getMilliCpu() {
+        return this.milliCpu;
+    }
+
+    public void setMilliCpu(Integer milliCpu) {
+      this.milliCpu = milliCpu;
     }
     
     public String getName() {
@@ -170,20 +320,20 @@ public class Host extends AbstractType {
       this.publicEndpoints = publicEndpoints;
     }
     
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
-    }
-    
     public String getRemoved() {
         return this.removed;
     }
 
     public void setRemoved(String removed) {
       this.removed = removed;
+    }
+    
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
     }
     
     public String getState() {

@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface HostAccessService {
 
-  @GET("hostAccess")
-  Call<TypeCollection<HostAccess>> list();
+    @GET("hostAccess")
+    Call<TypeCollection<HostAccess>> list();
 
-  @GET("hostAccess")
-  Call<TypeCollection<HostAccess>> list(@QueryMap Filters filters);
+    @GET("hostAccess")
+    Call<TypeCollection<HostAccess>> list(@QueryMap Filters filters);
 
-  @GET("hostAccess/{id}")
-  Call<HostAccess> get(@Path("id") String id);
+    @GET("hostAccess/{id}")
+    Call<HostAccess> get(@Path("id") String id);
 
-  @POST("hostAccess")
-  Call<HostAccess> create(@Body HostAccess hostAccess);
+    @POST("hostAccess")
+    Call<HostAccess> create(@Body HostAccess hostAccess);
 
-  @PUT("hostAccess/{id}")
-  Call<HostAccess> update(@Path("id") String id, @Body HostAccess hostAccess);
+    @PUT("hostAccess/{id}")
+    Call<HostAccess> update(@Path("id") String id, @Body HostAccess hostAccess);
 
-  @DELETE("hostAccess/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("hostAccess/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

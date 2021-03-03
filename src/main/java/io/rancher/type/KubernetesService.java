@@ -1,6 +1,7 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
+import java.util.List;
 import java.util.Map;
 
 public class KubernetesService extends AbstractType {
@@ -9,27 +10,29 @@ public class KubernetesService extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
-    
-    private String environmentId;
     
     private String externalId;
     
     private String healthState;
     
+    private List<String> instanceIds;
+    
     private String kind;
     
-    private String name;
+    private Map<String, Object> linkedServices;
     
-    private String removeTime;
+    private String name;
     
     private String removed;
     
     private String selectorContainer;
     
+    private String stackId;
+    
     private String state;
+    
+    private Boolean system;
     
     private Map<String, Object> template;
     
@@ -59,28 +62,12 @@ public class KubernetesService extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getEnvironmentId() {
-        return this.environmentId;
-    }
-
-    public void setEnvironmentId(String environmentId) {
-      this.environmentId = environmentId;
     }
     
     public String getExternalId() {
@@ -99,6 +86,14 @@ public class KubernetesService extends AbstractType {
       this.healthState = healthState;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -107,20 +102,20 @@ public class KubernetesService extends AbstractType {
       this.kind = kind;
     }
     
+    public Map<String, Object> getLinkedServices() {
+        return this.linkedServices;
+    }
+
+    public void setLinkedServices(Map<String, Object> linkedServices) {
+      this.linkedServices = linkedServices;
+    }
+    
     public String getName() {
         return this.name;
     }
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {
@@ -139,12 +134,28 @@ public class KubernetesService extends AbstractType {
       this.selectorContainer = selectorContainer;
     }
     
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public String getState() {
         return this.state;
     }
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public Boolean getSystem() {
+        return this.system;
+    }
+
+    public void setSystem(Boolean system) {
+      this.system = system;
     }
     
     public Map<String, Object> getTemplate() {

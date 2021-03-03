@@ -28,7 +28,7 @@ public class AuditLog extends AbstractType {
     
     private String resourceType;
     
-    private String responseCode;
+    private Integer responseCode;
     
     private String responseObject;
     
@@ -128,11 +128,11 @@ public class AuditLog extends AbstractType {
       this.resourceType = resourceType;
     }
     
-    public String getResponseCode() {
+    public Integer getResponseCode() {
         return this.responseCode;
     }
 
-    public void setResponseCode(String responseCode) {
+    public void setResponseCode(Integer responseCode) {
       this.responseCode = responseCode;
     }
     

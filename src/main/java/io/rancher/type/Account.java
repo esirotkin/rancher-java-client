@@ -1,27 +1,16 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class Account extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private String description;
-    
-    private String externalId;
-    
-    private String externalIdType;
-    
-    private String identity;
     
     private String kind;
     
     private String name;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -35,6 +24,8 @@ public class Account extends AbstractType {
     
     private String uuid;
     
+    private String version;
+    
     public String getCreated() {
         return this.created;
     }
@@ -43,44 +34,12 @@ public class Account extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getExternalId() {
-        return this.externalId;
-    }
-
-    public void setExternalId(String externalId) {
-      this.externalId = externalId;
-    }
-    
-    public String getExternalIdType() {
-        return this.externalIdType;
-    }
-
-    public void setExternalIdType(String externalIdType) {
-      this.externalIdType = externalIdType;
-    }
-    
-    public String getIdentity() {
-        return this.identity;
-    }
-
-    public void setIdentity(String identity) {
-      this.identity = identity;
     }
     
     public String getKind() {
@@ -97,14 +56,6 @@ public class Account extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {
@@ -153,6 +104,14 @@ public class Account extends AbstractType {
 
     public void setUuid(String uuid) {
       this.uuid = uuid;
+    }
+    
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+      this.version = version;
     }
     
 }

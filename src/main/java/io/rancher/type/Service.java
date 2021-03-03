@@ -1,8 +1,8 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class Service extends AbstractType {
     
@@ -16,11 +16,7 @@ public class Service extends AbstractType {
     
     private Integer currentScale;
     
-    private Map<String, Object> data;
-    
     private String description;
-    
-    private String environmentId;
     
     private String externalId;
     
@@ -28,17 +24,21 @@ public class Service extends AbstractType {
     
     private String healthState;
     
+    private List<String> instanceIds;
+    
     private String kind;
     
     private LaunchConfig launchConfig;
+    
+    private LbTargetConfig lbConfig;
+    
+    private Map<String, Object> linkedServices;
     
     private Map<String, Object> metadata;
     
     private String name;
     
     private List<PublicEndpoint> publicEndpoints;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -54,9 +54,13 @@ public class Service extends AbstractType {
     
     private String selectorLink;
     
+    private String stackId;
+    
     private Boolean startOnCreate;
     
     private String state;
+    
+    private Boolean system;
     
     private String transitioning;
     
@@ -110,28 +114,12 @@ public class Service extends AbstractType {
       this.currentScale = currentScale;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public String getDescription() {
         return this.description;
     }
 
     public void setDescription(String description) {
       this.description = description;
-    }
-    
-    public String getEnvironmentId() {
-        return this.environmentId;
-    }
-
-    public void setEnvironmentId(String environmentId) {
-      this.environmentId = environmentId;
     }
     
     public String getExternalId() {
@@ -158,6 +146,14 @@ public class Service extends AbstractType {
       this.healthState = healthState;
     }
     
+    public List<String> getInstanceIds() {
+        return this.instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+      this.instanceIds = instanceIds;
+    }
+    
     public String getKind() {
         return this.kind;
     }
@@ -172,6 +168,22 @@ public class Service extends AbstractType {
 
     public void setLaunchConfig(LaunchConfig launchConfig) {
       this.launchConfig = launchConfig;
+    }
+    
+    public LbTargetConfig getLbConfig() {
+        return this.lbConfig;
+    }
+
+    public void setLbConfig(LbTargetConfig lbConfig) {
+      this.lbConfig = lbConfig;
+    }
+    
+    public Map<String, Object> getLinkedServices() {
+        return this.linkedServices;
+    }
+
+    public void setLinkedServices(Map<String, Object> linkedServices) {
+      this.linkedServices = linkedServices;
     }
     
     public Map<String, Object> getMetadata() {
@@ -196,14 +208,6 @@ public class Service extends AbstractType {
 
     public void setPublicEndpoints(List<PublicEndpoint> publicEndpoints) {
       this.publicEndpoints = publicEndpoints;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {
@@ -262,6 +266,14 @@ public class Service extends AbstractType {
       this.selectorLink = selectorLink;
     }
     
+    public String getStackId() {
+        return this.stackId;
+    }
+
+    public void setStackId(String stackId) {
+      this.stackId = stackId;
+    }
+    
     public Boolean getStartOnCreate() {
         return this.startOnCreate;
     }
@@ -276,6 +288,14 @@ public class Service extends AbstractType {
 
     public void setState(String state) {
       this.state = state;
+    }
+    
+    public Boolean getSystem() {
+        return this.system;
+    }
+
+    public void setSystem(Boolean system) {
+      this.system = system;
     }
     
     public String getTransitioning() {

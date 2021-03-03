@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface SetServiceLinksInputService {
 
-  @GET("setServiceLinksInput")
-  Call<TypeCollection<SetServiceLinksInput>> list();
+    @GET("setServiceLinksInput")
+    Call<TypeCollection<SetServiceLinksInput>> list();
 
-  @GET("setServiceLinksInput")
-  Call<TypeCollection<SetServiceLinksInput>> list(@QueryMap Filters filters);
+    @GET("setServiceLinksInput")
+    Call<TypeCollection<SetServiceLinksInput>> list(@QueryMap Filters filters);
 
-  @GET("setServiceLinksInput/{id}")
-  Call<SetServiceLinksInput> get(@Path("id") String id);
+    @GET("setServiceLinksInput/{id}")
+    Call<SetServiceLinksInput> get(@Path("id") String id);
 
-  @POST("setServiceLinksInput")
-  Call<SetServiceLinksInput> create(@Body SetServiceLinksInput setServiceLinksInput);
+    @POST("setServiceLinksInput")
+    Call<SetServiceLinksInput> create(@Body SetServiceLinksInput setServiceLinksInput);
 
-  @PUT("setServiceLinksInput/{id}")
-  Call<SetServiceLinksInput> update(@Path("id") String id, @Body SetServiceLinksInput setServiceLinksInput);
+    @PUT("setServiceLinksInput/{id}")
+    Call<SetServiceLinksInput> update(@Path("id") String id, @Body SetServiceLinksInput setServiceLinksInput);
 
-  @DELETE("setServiceLinksInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("setServiceLinksInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

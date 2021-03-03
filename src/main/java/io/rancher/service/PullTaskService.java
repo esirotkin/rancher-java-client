@@ -3,6 +3,7 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.PullTask;
+import io.rancher.type.GenericObject;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -16,22 +17,25 @@ import retrofit2.http.QueryMap;
 
 public interface PullTaskService {
 
-  @GET("pullTask")
-  Call<TypeCollection<PullTask>> list();
+    @GET("pullTask")
+    Call<TypeCollection<PullTask>> list();
 
-  @GET("pullTask")
-  Call<TypeCollection<PullTask>> list(@QueryMap Filters filters);
+    @GET("pullTask")
+    Call<TypeCollection<PullTask>> list(@QueryMap Filters filters);
 
-  @GET("pullTask/{id}")
-  Call<PullTask> get(@Path("id") String id);
+    @GET("pullTask/{id}")
+    Call<PullTask> get(@Path("id") String id);
 
-  @POST("pullTask")
-  Call<PullTask> create(@Body PullTask pullTask);
+    @POST("pullTask")
+    Call<PullTask> create(@Body PullTask pullTask);
 
-  @PUT("pullTask/{id}")
-  Call<PullTask> update(@Path("id") String id, @Body PullTask pullTask);
+    @PUT("pullTask/{id}")
+    Call<PullTask> update(@Path("id") String id, @Body PullTask pullTask);
 
-  @DELETE("pullTask/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("pullTask/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("pullTask/{id}?action=remove")
+    Call<GenericObject> remove(@Path("id") String id);
+    
 }

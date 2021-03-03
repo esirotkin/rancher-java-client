@@ -1,7 +1,6 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class MachineDriver extends AbstractType {
     
@@ -13,8 +12,6 @@ public class MachineDriver extends AbstractType {
     
     private String created;
     
-    private Map<String, Object> data;
-    
     private Boolean defaultActive;
     
     private String description;
@@ -24,8 +21,6 @@ public class MachineDriver extends AbstractType {
     private String kind;
     
     private String name;
-    
-    private String removeTime;
     
     private String removed;
     
@@ -75,14 +70,6 @@ public class MachineDriver extends AbstractType {
       this.created = created;
     }
     
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
-    }
-    
     public Boolean getDefaultActive() {
         return this.defaultActive;
     }
@@ -121,14 +108,6 @@ public class MachineDriver extends AbstractType {
 
     public void setName(String name) {
       this.name = name;
-    }
-    
-    public String getRemoveTime() {
-        return this.removeTime;
-    }
-
-    public void setRemoveTime(String removeTime) {
-      this.removeTime = removeTime;
     }
     
     public String getRemoved() {

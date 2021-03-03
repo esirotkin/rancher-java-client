@@ -3,8 +3,8 @@ package io.rancher.service;
 import io.rancher.base.Filters;
 import io.rancher.base.TypeCollection;
 import io.rancher.type.Snapshot;
-import io.rancher.type.SnapshotBackupInput;
 import io.rancher.type.Backup;
+import io.rancher.type.SnapshotBackupInput;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -18,28 +18,28 @@ import retrofit2.http.QueryMap;
 
 public interface SnapshotService {
 
-  @GET("snapshot")
-  Call<TypeCollection<Snapshot>> list();
+    @GET("snapshot")
+    Call<TypeCollection<Snapshot>> list();
 
-  @GET("snapshot")
-  Call<TypeCollection<Snapshot>> list(@QueryMap Filters filters);
+    @GET("snapshot")
+    Call<TypeCollection<Snapshot>> list(@QueryMap Filters filters);
 
-  @GET("snapshot/{id}")
-  Call<Snapshot> get(@Path("id") String id);
+    @GET("snapshot/{id}")
+    Call<Snapshot> get(@Path("id") String id);
 
-  @POST("snapshot")
-  Call<Snapshot> create(@Body Snapshot snapshot);
+    @POST("snapshot")
+    Call<Snapshot> create(@Body Snapshot snapshot);
 
-  @PUT("snapshot/{id}")
-  Call<Snapshot> update(@Path("id") String id, @Body Snapshot snapshot);
+    @PUT("snapshot/{id}")
+    Call<Snapshot> update(@Path("id") String id, @Body Snapshot snapshot);
 
-  @DELETE("snapshot/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("snapshot/{id}?action=backup")
-  Call<Backup> backup(@Path("id") String id, @Body SnapshotBackupInput snapshotBackupInput);
-  
-  @POST("snapshot/{id}?action=remove")
-  Call<Snapshot> remove(@Path("id") String id);
-  
+    @DELETE("snapshot/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("snapshot/{id}?action=backup")
+    Call<Backup> backup(@Path("id") String id, @Body SnapshotBackupInput snapshotBackupInput);
+    
+    @POST("snapshot/{id}?action=remove")
+    Call<Snapshot> remove(@Path("id") String id);
+    
 }

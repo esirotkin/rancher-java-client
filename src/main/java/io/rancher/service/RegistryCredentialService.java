@@ -17,34 +17,34 @@ import retrofit2.http.QueryMap;
 
 public interface RegistryCredentialService {
 
-  @GET("registryCredential")
-  Call<TypeCollection<RegistryCredential>> list();
+    @GET("registryCredential")
+    Call<TypeCollection<RegistryCredential>> list();
 
-  @GET("registryCredential")
-  Call<TypeCollection<RegistryCredential>> list(@QueryMap Filters filters);
+    @GET("registryCredential")
+    Call<TypeCollection<RegistryCredential>> list(@QueryMap Filters filters);
 
-  @GET("registryCredential/{id}")
-  Call<RegistryCredential> get(@Path("id") String id);
+    @GET("registryCredential/{id}")
+    Call<RegistryCredential> get(@Path("id") String id);
 
-  @POST("registryCredential")
-  Call<RegistryCredential> create(@Body RegistryCredential registryCredential);
+    @POST("registryCredential")
+    Call<RegistryCredential> create(@Body RegistryCredential registryCredential);
 
-  @PUT("registryCredential/{id}")
-  Call<RegistryCredential> update(@Path("id") String id, @Body RegistryCredential registryCredential);
+    @PUT("registryCredential/{id}")
+    Call<RegistryCredential> update(@Path("id") String id, @Body RegistryCredential registryCredential);
 
-  @DELETE("registryCredential/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
-  @POST("registryCredential/{id}?action=activate")
-  Call<Credential> activate(@Path("id") String id);
-  
-  @POST("registryCredential/{id}?action=deactivate")
-  Call<Credential> deactivate(@Path("id") String id);
-  
-  @POST("registryCredential/{id}?action=purge")
-  Call<Credential> purge(@Path("id") String id);
-  
-  @POST("registryCredential/{id}?action=remove")
-  Call<Credential> remove(@Path("id") String id);
-  
+    @DELETE("registryCredential/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
+    @POST("registryCredential/{id}?action=activate")
+    Call<Credential> activate(@Path("id") String id);
+    
+    @POST("registryCredential/{id}?action=deactivate")
+    Call<Credential> deactivate(@Path("id") String id);
+    
+    @POST("registryCredential/{id}?action=purge")
+    Call<Credential> purge(@Path("id") String id);
+    
+    @POST("registryCredential/{id}?action=remove")
+    Call<Credential> remove(@Path("id") String id);
+    
 }

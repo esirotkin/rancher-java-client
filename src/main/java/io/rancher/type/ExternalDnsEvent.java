@@ -1,15 +1,12 @@
 package io.rancher.type;
 
 import io.rancher.base.AbstractType;
-import java.util.Map;
 
 public class ExternalDnsEvent extends AbstractType {
     
     private String accountId;
     
     private String created;
-    
-    private Map<String, Object> data;
     
     private String eventType;
     
@@ -49,14 +46,6 @@ public class ExternalDnsEvent extends AbstractType {
 
     public void setCreated(String created) {
       this.created = created;
-    }
-    
-    public Map<String, Object> getData() {
-        return this.data;
-    }
-
-    public void setData(Map<String, Object> data) {
-      this.data = data;
     }
     
     public String getEventType() {

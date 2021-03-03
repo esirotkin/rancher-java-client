@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface LoadBalancerCookieStickinessPolicyService {
 
-  @GET("loadBalancerCookieStickinessPolicy")
-  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list();
+    @GET("loadBalancerCookieStickinessPolicy")
+    Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list();
 
-  @GET("loadBalancerCookieStickinessPolicy")
-  Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap Filters filters);
+    @GET("loadBalancerCookieStickinessPolicy")
+    Call<TypeCollection<LoadBalancerCookieStickinessPolicy>> list(@QueryMap Filters filters);
 
-  @GET("loadBalancerCookieStickinessPolicy/{id}")
-  Call<LoadBalancerCookieStickinessPolicy> get(@Path("id") String id);
+    @GET("loadBalancerCookieStickinessPolicy/{id}")
+    Call<LoadBalancerCookieStickinessPolicy> get(@Path("id") String id);
 
-  @POST("loadBalancerCookieStickinessPolicy")
-  Call<LoadBalancerCookieStickinessPolicy> create(@Body LoadBalancerCookieStickinessPolicy loadBalancerCookieStickinessPolicy);
+    @POST("loadBalancerCookieStickinessPolicy")
+    Call<LoadBalancerCookieStickinessPolicy> create(@Body LoadBalancerCookieStickinessPolicy loadBalancerCookieStickinessPolicy);
 
-  @PUT("loadBalancerCookieStickinessPolicy/{id}")
-  Call<LoadBalancerCookieStickinessPolicy> update(@Path("id") String id, @Body LoadBalancerCookieStickinessPolicy loadBalancerCookieStickinessPolicy);
+    @PUT("loadBalancerCookieStickinessPolicy/{id}")
+    Call<LoadBalancerCookieStickinessPolicy> update(@Path("id") String id, @Body LoadBalancerCookieStickinessPolicy loadBalancerCookieStickinessPolicy);
 
-  @DELETE("loadBalancerCookieStickinessPolicy/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("loadBalancerCookieStickinessPolicy/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

@@ -1,11 +1,11 @@
 package io.rancher.client;
 
+import java.io.IOException;
+import java.util.Base64;
+
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import java.io.IOException;
-import java.util.Base64;
 
 public class BasicAuthInterceptor implements Interceptor {
 
@@ -18,12 +18,10 @@ public class BasicAuthInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        Request modifiedRequest = request.newBuilder().addHeader(
-                "Authorization",
-                "Basic " +
-                        Base64.getEncoder().encodeToString(
-                                (credentials.getUsername() + ":" + credentials.getPassword()).getBytes())
-        ).build();
+        Request modifiedRequest = request.newBuilder().addHeader("Authorization",
+                                                                 "Basic " + Base64.getEncoder()
+                                                                                  .encodeToString((credentials.getUsername() + ":" + credentials.getPassword()).getBytes()))
+                                         .build();
         return chain.proceed(modifiedRequest);
     }
 
@@ -53,4 +51,5 @@ public class BasicAuthInterceptor implements Interceptor {
             return new Credentials(username, password);
         }
     }
+
 }

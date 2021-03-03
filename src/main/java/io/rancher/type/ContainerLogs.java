@@ -8,6 +8,10 @@ public class ContainerLogs extends AbstractType {
     
     private Integer lines;
     
+    private String since;
+    
+    private Boolean timestamps;
+    
     public Boolean getFollow() {
         return this.follow;
     }
@@ -22,6 +26,22 @@ public class ContainerLogs extends AbstractType {
 
     public void setLines(Integer lines) {
       this.lines = lines;
+    }
+    
+    public String getSince() {
+        return this.since;
+    }
+
+    public void setSince(String since) {
+      this.since = since;
+    }
+    
+    public Boolean getTimestamps() {
+        return this.timestamps;
+    }
+
+    public void setTimestamps(Boolean timestamps) {
+      this.timestamps = timestamps;
     }
     
 }

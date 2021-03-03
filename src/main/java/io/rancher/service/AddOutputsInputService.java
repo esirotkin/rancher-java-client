@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface AddOutputsInputService {
 
-  @GET("addOutputsInput")
-  Call<TypeCollection<AddOutputsInput>> list();
+    @GET("addOutputsInput")
+    Call<TypeCollection<AddOutputsInput>> list();
 
-  @GET("addOutputsInput")
-  Call<TypeCollection<AddOutputsInput>> list(@QueryMap Filters filters);
+    @GET("addOutputsInput")
+    Call<TypeCollection<AddOutputsInput>> list(@QueryMap Filters filters);
 
-  @GET("addOutputsInput/{id}")
-  Call<AddOutputsInput> get(@Path("id") String id);
+    @GET("addOutputsInput/{id}")
+    Call<AddOutputsInput> get(@Path("id") String id);
 
-  @POST("addOutputsInput")
-  Call<AddOutputsInput> create(@Body AddOutputsInput addOutputsInput);
+    @POST("addOutputsInput")
+    Call<AddOutputsInput> create(@Body AddOutputsInput addOutputsInput);
 
-  @PUT("addOutputsInput/{id}")
-  Call<AddOutputsInput> update(@Path("id") String id, @Body AddOutputsInput addOutputsInput);
+    @PUT("addOutputsInput/{id}")
+    Call<AddOutputsInput> update(@Path("id") String id, @Body AddOutputsInput addOutputsInput);
 
-  @DELETE("addOutputsInput/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("addOutputsInput/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }

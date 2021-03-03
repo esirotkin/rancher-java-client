@@ -16,22 +16,22 @@ import retrofit2.http.QueryMap;
 
 public interface BaseMachineConfigService {
 
-  @GET("baseMachineConfig")
-  Call<TypeCollection<BaseMachineConfig>> list();
+    @GET("baseMachineConfig")
+    Call<TypeCollection<BaseMachineConfig>> list();
 
-  @GET("baseMachineConfig")
-  Call<TypeCollection<BaseMachineConfig>> list(@QueryMap Filters filters);
+    @GET("baseMachineConfig")
+    Call<TypeCollection<BaseMachineConfig>> list(@QueryMap Filters filters);
 
-  @GET("baseMachineConfig/{id}")
-  Call<BaseMachineConfig> get(@Path("id") String id);
+    @GET("baseMachineConfig/{id}")
+    Call<BaseMachineConfig> get(@Path("id") String id);
 
-  @POST("baseMachineConfig")
-  Call<BaseMachineConfig> create(@Body BaseMachineConfig baseMachineConfig);
+    @POST("baseMachineConfig")
+    Call<BaseMachineConfig> create(@Body BaseMachineConfig baseMachineConfig);
 
-  @PUT("baseMachineConfig/{id}")
-  Call<BaseMachineConfig> update(@Path("id") String id, @Body BaseMachineConfig baseMachineConfig);
+    @PUT("baseMachineConfig/{id}")
+    Call<BaseMachineConfig> update(@Path("id") String id, @Body BaseMachineConfig baseMachineConfig);
 
-  @DELETE("baseMachineConfig/{id}")
-  Call<Response> delete(@Path("id") String id);
-  
+    @DELETE("baseMachineConfig/{id}")
+    Call<Response> delete(@Path("id") String id);
+    
 }
