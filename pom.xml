@@ -10,7 +10,7 @@
 
     <groupId>io.github.esirotkin</groupId>
     <artifactId>rancher-java-client</artifactId>
-    <version>1.6.26</version>
+    <version>1.6.27-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:ssh://git@github.com:esirotkin/rancher-java-client.git</developerConnection>
